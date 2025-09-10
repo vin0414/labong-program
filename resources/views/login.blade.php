@@ -74,19 +74,27 @@
                                 </script>
                             </div>
                             <div class="col-lg-12">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-sign-in"></i>&nbsp;Login
+                                <button type="submit" class="btn btn-primary form-control">
+                                    <i class="fas fa-sign-in"></i>&nbsp;Sign In
                                 </button>
-                                <a class="btn btn-secondary" href="{{ route('/') }}" style="text-decoration: none;">
-                                    <i class="fas fa-arrow-left"></i>&nbsp;Return
-                                </a>
                             </div>
+                            <a class="btn btn-link" href="{{ route('/') }}" style="text-decoration: none;">
+                                <i class="fas fa-arrow-left"></i>&nbsp;Back to Home
+                            </a>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    setTimeout(function() {
+        const alerts = document.getElementsByClassName('alert');
+        for (let i = 0; i < alerts.length; i++) {
+            alerts[i].style.display = 'none';
+        }
+    }, 3000);
+    </script>
 </body>
 
 </html>

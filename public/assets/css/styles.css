@@ -1207,3 +1207,16 @@
         }
 
     }
+
+    .text-danger {
+        color: #e74c3c
+    }
+
+    .text-success {
+        color: #2ecc71
+    }
+
+    .no-line {
+        text-decoration: none;
+        color: #333;
+    }

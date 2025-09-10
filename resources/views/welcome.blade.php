@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LABONG Program Monitoring System</title>
@@ -46,552 +45,303 @@
         </header>
         <div class="tabs">
             <div class="tab active" data-target="projects-view">Projects Dashboard</div>
-            @if(!empty(session()->get('user')))
             <div class="tab" data-target="activity-view">Activity Details</div>
-            @endif
             <div class="tab" data-target="consolidated-view">Consolidated Report</div>
             @if(!empty(session()->get('user')))
             <div class="tab" data-target="create-view">Create Project</div>
             @endif
         </div>
-
+        @if(session('success'))
+        <div class="alert text-success" style="margin:5px;padding:5px;">
+            {{ session('success') }}
+        </div>
+        @endif
+        @if(session('error'))
+        <div class="alert text-danger" style="margin:5px;padding:5px;">
+            {{ session('error') }}
+        </div>
+        @endif
         <!-- Projects Dashboard View -->
 
         <div id="projects-view" class="tab-content active">
-
             <div class="section-title">
-
                 <i class="fas fa-project-diagram"></i>
-
                 <h2>LABONG Program Projects</h2>
-
             </div>
-
-
-
             <div class="projects-grid">
-
                 <!-- Project Card 1: I-CARE -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-hands-helping"></i> I-CARE</h3>
-
-                        <div class="project-description">Intensifying Curriculum, Assessment, Resources Resulting to
-                            Excellence</div>
-
-                    </div>
-
-                    <div class="project-body">
-
-                        <div class="project-meta">
-
-                            <span>4 Activities</span>
-
-                            <span>Overall Progress: 65%</span>
-
+                        <div class="project-description">
+                            Intensifying Curriculum, Assessment, Resources Resulting to Excellence
                         </div>
-
-                        <ul class="activity-list">
-
-                            <li data-project="icare" data-activity="training">
-
-                                Employee Training Program <span class="activity-progress">71%</span>
-
-                            </li>
-
-                            <li data-project="icare" data-activity="summit">
-
-                                Stakeholders Summit <span class="activity-progress">45%</span>
-
-                            </li>
-
-                            <li data-project="icare" data-activity="workshop">
-
-                                Leadership Workshop <span class="activity-progress">85%</span>
-
-                            </li>
-
-                            <li data-project="icare" data-activity="outreach">
-
-                                Community Outreach <span class="activity-progress">30%</span>
-
-                            </li>
-
-                        </ul>
-
                     </div>
-
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span><?=$totalICare ?> Activities</span>
+                            <span>Overall Progress: 0%</span>
+                        </div>
+                        <ul class="activity-list">
+                            <?php foreach($listICare as $activity): ?>
+                            <li data-project="icare">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </div>
-
-
 
                 <!-- Project Card 2: SINULID -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-book"></i> SINULID</h3>
-
                         <div class="project-description">Schools Initiative in Numeracy and Literacy Development</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>3 Activities</span>
-
-                            <span>Overall Progress: 52%</span>
-
+                            <span><?=$totalSinulid?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li data-project="sinulid" data-activity="weaving">
-
-                                Reading Enhancement Program <span class="activity-progress">65%</span>
-
+                            <?php foreach($listSinulid as $activity): ?>
+                            <li data-project="sinulid">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
                             </li>
-
-                            <li data-project="sinulid" data-activity="exhibit">
-
-                                Math Skills Development <span class="activity-progress">40%</span>
-
-                            </li>
-
-                            <li data-project="sinulid" data-activity="heritage">
-
-                                Science Exploration Workshops <span class="activity-progress">50%</span>
-
-                            </li>
-
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 3: SAGIP -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-life-ring"></i> SAGIP</h3>
-
                         <div class="project-description">Sikaping Agapan, Gabayan, at Ibalik sa Paaralan</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>3 Activities</span>
-
-                            <span>Overall Progress: 78%</span>
-
+                            <span><?=$totalSagip?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li data-project="sagip" data-activity="disaster">
-
-                                Dropout Prevention Program <span class="activity-progress">90%</span>
-
+                            <?php foreach($listSagip as $activity): ?>
+                            <li data-project="sagip">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
                             </li>
-
-                            <li data-project="sagip" data-activity="rescue">
-
-                                Student Retention Initiative <span class="activity-progress">75%</span>
-
-                            </li>
-
-                            <li data-project="sagip" data-activity="response">
-
-                                Alternative Learning Pathways <span class="activity-progress">70%</span>
-
-                            </li>
-
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 4: LINGAP -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-heart"></i> LINGAP</h3>
-
                         <div class="project-description">Learners INclusive Growth through Applicable Programs</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>5 Activities</span>
-
-                            <span>Overall Progress: 60%</span>
-
+                            <span><?=$totalLingap?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li data-project="lingap" data-activity="medical">
-
-                                Special Needs Education <span class="activity-progress">55%</span>
-
+                            <?php foreach($listLingap as $activity): ?>
+                            <li data-project="lingap">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
                             </li>
-
-                            <li data-project="lingap" data-activity="feeding">
-
-                                Inclusive Curriculum Development <span class="activity-progress">80%</span>
-
-                            </li>
-
-                            <li data-project="lingap" data-activity="elderly">
-
-                                Learning Support Programs <span class="activity-progress">45%</span>
-
-                            </li>
-
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 5: ISSHED -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-handshake"></i> ISSHED</h3>
-
                         <div class="project-description">Innovating and Strengthening Support through Holistic
                             Engagement of DepEd Partners</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>2 Activities</span>
-
-                            <span>Overall Progress: 40%</span>
-
+                            <span><?=$totalIsshed?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li data-project="isshed" data-activity="housing">
-
-                                Stakeholder Engagement Forum <span class="activity-progress">35%</span>
-
+                            <?php foreach($listIsshed as $activity): ?>
+                            <li data-project="isshed">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
                             </li>
-
-                            <li data-project="isshed" data-activity="shelter">
-
-                                Partnership Development Workshop <span class="activity-progress">45%</span>
-
-                            </li>
-
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 6: UX -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-laptop-code"></i> UX</h3>
-
                         <div class="project-description">Project User Experience (System Development)</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>3 Activities</span>
-
-                            <span>Overall Progress: 70%</span>
-
+                            <span><?=$totalUX?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li data-project="ux" data-activity="survey">
-
-                                LMS Platform Enhancement <span class="activity-progress">85%</span>
-
+                            <?php foreach($listUX as $activity): ?>
+                            <li data-project="ux">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
                             </li>
-
-                            <li data-project="ux" data-activity="feedback">
-
-                                Student Portal Redesign <span class="activity-progress">60%</span>
-
-                            </li>
-
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 7: Gentri Saliksik -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-microscope"></i> Gentri Saliksik</h3>
-
                         <div class="project-description">Research, Continuous Improvement, and Innovations</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>4 Activities</span>
-
-                            <span>Overall Progress: 55%</span>
-
+                            <span><?=$totalGentri?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li>Education Research Symposium</li>
-
-                            <li>Innovation Grants Program</li>
-
+                            <?php foreach($listGentri as $activity): ?>
+                            <li data-project="gentri">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 8: OK sa DepEd Gentri -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-heartbeat"></i> OK sa DepEd Gentri</h3>
-
                         <div class="project-description">Oplan Kalusugan sa DepED GenTri</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>5 Activities</span>
-
-                            <span>Overall Progress: 80%</span>
-
+                            <span><?=$totalOkDepEd?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li>School Health Program</li>
-
-                            <li>Mental Health Initiative</li>
-
+                            <?php foreach($listOkDepEd as $activity): ?>
+                            <li data-project="OkDepEd">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 9: SECURE-PUSO -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-shield-alt"></i> SECURE-PUSO</h3>
-
                         <div class="project-description">Strengthening and Empowering Children's Rights and Protection
                         </div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>3 Activities</span>
-
-                            <span>Overall Progress: 75%</span>
-
+                            <span><?=$totalSecurePuso?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li>Child Protection Workshops</li>
-
-                            <li>Rights Education Program</li>
-
+                            <?php foreach($listSecurePuso as $activity): ?>
+                            <li data-project="secure-puso">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 10: DRRM-SAFE -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-hard-hat"></i> DRRM-SAFE</h3>
-
                         <div class="project-description">Dagling Responde, Ramdam Mo - School Assessment of Facilities
                             and Equipment</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>4 Activities</span>
-
-                            <span>Overall Progress: 65%</span>
-
+                            <span><?=$totalDRRM?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li>School Safety Audit</li>
-
-                            <li>Disaster Preparedness Training</li>
-
+                            <?php foreach($listDRRM as $activity): ?>
+                            <li data-project="drrm-safe">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 11: HUMANE -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-users"></i> HUMANE</h3>
-
                         <div class="project-description">Holistic Understanding and Management of Abilities and Needs of
                             Employees</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>3 Activities</span>
-
-                            <span>Overall Progress: 50%</span>
-
+                            <span><?=$totalHumane?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li>Professional Development Program</li>
-
-                            <li>Employee Wellness Initiative</li>
-
+                            <?php foreach($listHumane as $activity): ?>
+                            <li data-project="humane">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
-
 
                 <!-- Project Card 12: QMS/EOMS -->
-
                 <div class="project-card">
-
                     <div class="project-header">
-
                         <h3><i class="fas fa-cogs"></i> QMS/EOMS</h3>
-
                         <div class="project-description">Management and Governance Process and System</div>
-
                     </div>
-
                     <div class="project-body">
-
                         <div class="project-meta">
-
-                            <span>4 Activities</span>
-
-                            <span>Overall Progress: 45%</span>
-
+                            <span><?=$totalQMS?> Activities</span>
+                            <span>Overall Progress: 0%</span>
                         </div>
-
                         <ul class="activity-list">
-
-                            <li>Process Optimization Workshop</li>
-
-                            <li>Governance Framework Development</li>
-
+                            <?php foreach($listQMS as $activity): ?>
+                            <li data-project="qms-eoms">
+                                <a href="" class="no-line"><?=$activity['name']?></a><span
+                                    class="activity-progress">0%</span>
+                            </li>
+                            <?php endforeach; ?>
                         </ul>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
-
-
         <!-- Activity Detail View -->
-
         <div id="activity-view" class="tab-content">
 
             <div class="hierarchy-nav">
@@ -1064,88 +814,45 @@
 
         </div>
 
-
-
         <!-- Consolidated View -->
-
         <div id="consolidated-view" class="tab-content">
-
             <div class="section-title">
-
                 <i class="fas fa-chart-pie"></i>
-
                 <h2>Consolidated Program Status</h2>
-
             </div>
-
-
-
             <div class="activity-details">
-
                 <div class="section-title">
-
                     <i class="fas fa-layer-group"></i>
-
                     <h2>LABONG Program Overview</h2>
-
                 </div>
-
-
-
                 <div class="activity-info-grid">
-
                     <div class="info-card">
-
                         <h3>Total Projects</h3>
-
                         <p>12</p>
-
                     </div>
-
                     <div class="info-card">
-
                         <h3>Total Activities</h3>
-
-                        <p>42</p>
-
+                        <p><?=$total?></p>
                     </div>
-
                     <div class="info-card">
-
                         <h3>Total Budget</h3>
-
-                        <p>₱12,500,000</p>
-
+                        <p>₱<?=number_format($totalBudget,2)?></p>
                     </div>
-
                     <div class="info-card">
-
                         <h3>Overall Progress</h3>
-
-                        <p>68%</p>
-
+                        <p><?=$percent?>%</p>
                     </div>
-
                 </div>
-
-
 
                 <div class="progress-container">
 
                     <div class="progress-header">
-
                         <h3>Program Progress</h3>
-
-                        <span class="progress-percentage">68%</span>
-
+                        <span class="progress-percentage"><?=$percent?>%</span>
                     </div>
-
                     <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 68%"></div>
-
+                        <div class="progress-fill" style="width: <?=$percent?>%"></div>
                     </div>
-
                 </div>
 
             </div>
@@ -1303,183 +1010,122 @@
         <!-- Create Project View -->
 
         <div id="create-view" class="tab-content">
-
             <div class="section-title">
-
                 <i class="fas fa-plus-circle"></i>
-
                 <h2>Create New Activity</h2>
-
             </div>
-
-
-
             <div class="form-container">
-
-                <form id="activity-form">
-
+                <form id="activity-form" method="POST" action="{{ route('save-project') }}">
+                    @csrf
                     <div class="form-group">
-
                         <label for="activity-title">Activity Title</label>
-
-                        <input type="text" id="activity-title" placeholder="Enter activity title" required>
-
+                        <input type="text" name="activity-title" value="{{ old('activity-title') }}"
+                            placeholder="Enter activity title" required />
+                        @if($errors->has('activity-title'))
+                        <span class="text-danger">{{ $errors->first('activity-title') }}</span>
+                        @endif
                     </div>
-
-
-
                     <div class="form-row">
-
                         <div class="form-col">
-
                             <div class="form-group">
-
                                 <label for="project-category">Under Which Project</label>
-
-                                <select id="project-category" required>
-
+                                <select name="project-category" required>
                                     <option value="">Select Project</option>
-
-                                    <option>I-CARE</option>
-
-                                    <option>SINULID</option>
-
-                                    <option>SAGIP</option>
-
-                                    <option>LINGAP</option>
-
-                                    <option>ISSHED</option>
-
-                                    <option>UX</option>
-
-                                    <option>Gentri Saliksik</option>
-
-                                    <option>OK sa DepEd Gentri</option>
-
-                                    <option>SECURE-PUSO</option>
-
-                                    <option>DRRM-SAFE</option>
-
-                                    <option>HUMANE</option>
-
-                                    <option>QMS/EOMS</option>
-
+                                    <option {{old('project-category')=='I-CARE' ? 'selected': ''}}>I-CARE</option>
+                                    <option {{old('project-category')=='SINULID' ? 'selected': ''}}>SINULID</option>
+                                    <option {{old('project-category')=='SAGIP' ? 'selected': ''}}>SAGIP</option>
+                                    <option {{old('project-category')=='LINGAP' ? 'selected': ''}}>LINGAP</option>
+                                    <option {{old('project-category')=='ISSHED' ? 'selected': ''}}>ISSHED</option>
+                                    <option {{old('project-category')=='UX' ? 'selected': ''}}>UX</option>
+                                    <option {{old('project-category')=='Gentri Saliksik' ? 'selected': ''}}>Gentri
+                                        Saliksik</option>
+                                    <option {{old('project-category')=='OK sa DepEd Gentri' ? 'selected': ''}}>OK sa
+                                        DepEd Gentri</option>
+                                    <option {{old('project-category')=='SECURE-PUSO' ? 'selected': ''}}>SECURE-PUSO
+                                    </option>
+                                    <option {{old('project-category')=='DRRM-SAFE' ? 'selected': ''}}>DRRM-SAFE</option>
+                                    <option {{old('project-category')=='HUMANE' ? 'selected': ''}}>HUMANE</option>
+                                    <option {{old('project-category')=='QMS/EOMS' ? 'selected': ''}}>QMS/EOMS</option>
                                 </select>
-
+                                @if($errors->has('project-category'))
+                                <span class="text-danger">{{ $errors->first('project-category') }}</span>
+                                @endif
                             </div>
-
                         </div>
-
                         <div class="form-col">
-
                             <div class="form-group">
-
                                 <label for="budget-source-create">Budget Source</label>
-
-                                <select id="budget-source-create" required>
-
+                                <select name="budget-source-create" required>
                                     <option value="">Select Budget Source</option>
-
                                     <option>MOOE-GAS</option>
-
                                     <option>MOOE-HRTD</option>
-
                                     <option>CO</option>
-
                                     <option>PSF</option>
-
                                     <option>SEF</option>
-
                                     <option>SMN</option>
-
                                     <option>Others</option>
-
                                 </select>
-
+                                @if($errors->has('budget-source-create'))
+                                <span class="text-danger">{{ $errors->first('budget-source-create') }}</span>
+                                @endif
                             </div>
-
                         </div>
-
                     </div>
-
-
-
                     <div class="form-row">
-
                         <div class="form-col">
-
                             <div class="form-group">
-
                                 <label for="proponent-firstname">Proponent First Name</label>
-
-                                <input type="text" id="proponent-firstname" placeholder="Enter first name" required>
-
+                                <input type="text" name="proponent-firstname" value="{{ old('proponent-firstname') }}"
+                                    placeholder="Enter first name" required />
+                                @if($errors->has('proponent-firstname'))
+                                <span class="text-danger">{{ $errors->first('proponent-firstname') }}</span>
+                                @endif
                             </div>
-
                         </div>
-
                         <div class="form-col">
-
                             <div class="form-group">
-
                                 <label for="proponent-surname">Proponent Surname</label>
-
-                                <input type="text" id="proponent-surname" placeholder="Enter surname" required>
-
+                                <input type="text" name="proponent-surname" value="{{ old('proponent-surname') }}"
+                                    placeholder="Enter surname" required />
+                                @if($errors->has('proponent-surname'))
+                                <span class="text-danger">{{ $errors->first('proponent-surname') }}</span>
+                                @endif
                             </div>
-
                         </div>
-
                     </div>
-
-
-
                     <div class="form-row">
-
                         <div class="form-col">
-
                             <div class="form-group">
-
                                 <label for="budget-allocated-create">Budget Allocated (₱)</label>
-
-                                <input type="number" id="budget-allocated-create" placeholder="Enter amount" required>
-
+                                <input type="number" name="budget-allocated-create"
+                                    value="{{ old('budget-allocated-create') }}" placeholder="Enter amount" required />
+                                @if($errors->has('budget-allocated-create'))
+                                <span class="text-danger">{{ $errors->first('budget-allocated-create') }}</span>
+                                @endif
                             </div>
-
                         </div>
-
                         <div class="form-col">
-
                             <div class="form-group">
-
                                 <label for="target-date-create">Target Date of Implementation</label>
-
-                                <input type="date" id="target-date-create" required>
-
+                                <input type="date" name="target-date-create" value="{{ old('target-date-create') }}"
+                                    required />
+                                @if($errors->has('target-date-create'))
+                                <span class="text-danger">{{ $errors->first('target-date-create') }}</span>
+                                @endif
                             </div>
-
                         </div>
-
                     </div>
-
-
-
                     <div class="form-group">
-
                         <label for="activity-description">Activity Description</label>
-
-                        <textarea id="activity-description" rows="4" placeholder="Describe the activity"></textarea>
-
+                        <textarea name="activity-description" rows="4"
+                            placeholder="Describe the activity">{{old('activity-description')}}</textarea>
+                        @if($errors->has('activity-description'))
+                        <span class="text-danger">{{ $errors->first('activity-description') }}</span>
+                        @endif
                     </div>
-
-
-
                     <button type="submit" class="submit-btn">
-
                         <i class="fas fa-save"></i> Create Activity
-
                     </button>
-
                 </form>
 
             </div>
@@ -1518,536 +1164,16 @@
     </div>
 
 
-
+    <!-- JavaScript for interactivity -->
+    <script src="assets/js/script.js"></script>
     <script>
     // Initialize the app
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // Tab functionality
-
-        document.querySelectorAll('.tab').forEach(tab => {
-
-            tab.addEventListener('click', function() {
-
-                // Remove active class from all tabs
-
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-
-
-
-                // Add active class to clicked tab
-
-                this.classList.add('active');
-
-
-
-                // Hide all tab content
-
-                document.querySelectorAll('.tab-content').forEach(content => {
-
-                    content.classList.remove('active');
-
-                });
-
-
-
-                // Show the target tab content
-
-                const target = this.getAttribute('data-target');
-
-                document.getElementById(target).classList.add('active');
-
-            });
-
-        });
-
-
-
-        // Activity selection
-
-        document.querySelectorAll('.activity-list li').forEach(activity => {
-
-            activity.addEventListener('click', function() {
-
-                const project = this.getAttribute('data-project');
-
-                const activityName = this.getAttribute('data-activity');
-
-
-
-                // Update hierarchy navigation
-
-                document.getElementById('current-project').textContent =
-
-                    document.querySelector(`.project-card [data-project="${project}"]`)
-
-                    .closest('.project-card')
-
-                    .querySelector('.project-header h3').textContent;
-
-
-
-                document.getElementById('current-activity').textContent =
-
-                    this.textContent.split('<')[0].trim();
-
-
-
-                // Switch to activity view
-
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-
-                document.querySelector('[data-target="activity-view"]').classList.add('active');
-
-
-
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove(
-                    'active'));
-
-                document.getElementById('activity-view').classList.add('active');
-
-            });
-
-        });
-
-
-
-        // Back to projects button
-
-        document.getElementById('back-to-projects').addEventListener('click', function() {
-
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-
-            document.querySelector('[data-target="projects-view"]').classList.add('active');
-
-
-
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
-            document.getElementById('projects-view').classList.add('active');
-
-        });
-
-
-
-        // Sequential deliverables logic
-
-        const checkboxes = document.querySelectorAll('.step-checkbox');
-
-        checkboxes.forEach((checkbox, index) => {
-
-            checkbox.addEventListener('change', function() {
-
-                // If checked, enable the next checkbox
-
-                if (this.checked && index < checkboxes.length - 1) {
-
-                    checkboxes[index + 1].disabled = false;
-
-                    checkboxes[index + 1].nextElementSibling.nextElementSibling.textContent =
-                        "Pending";
-
-                    checkboxes[index + 1].nextElementSibling.nextElementSibling.className =
-                        "step-status status-pending";
-
-                }
-
-
-
-                // If unchecked, disable all subsequent checkboxes
-
-                if (!this.checked) {
-
-                    for (let i = index + 1; i < checkboxes.length; i++) {
-
-                        checkboxes[i].checked = false;
-
-                        checkboxes[i].disabled = true;
-
-                        checkboxes[i].nextElementSibling.nextElementSibling.textContent =
-                            "Pending";
-
-                        checkboxes[i].nextElementSibling.nextElementSibling.className =
-                            "step-status status-pending";
-
-                    }
-
-                }
-
-
-
-                // Update progress
-
-                updateActivityProgress();
-
-            });
-
-        });
-
-
-
-        // Editable fields
-
-        document.querySelectorAll('.editable-field').forEach(field => {
-
-            if (field.tagName !== 'SELECT') {
-
-                field.addEventListener('click', function() {
-
-                    const currentValue = this.textContent;
-
-                    const input = document.createElement('input');
-
-                    input.type = 'text';
-
-                    input.value = currentValue;
-
-                    input.style.width = '100%';
-
-                    input.style.fontSize = 'inherit';
-
-                    input.style.fontWeight = 'inherit';
-
-                    input.style.border = '1px solid #3498db';
-
-                    input.style.borderRadius = '4px';
-
-                    input.style.padding = '5px';
-
-
-
-                    this.textContent = '';
-
-                    this.appendChild(input);
-
-                    input.focus();
-
-
-
-                    input.addEventListener('blur', function() {
-
-                        const newValue = this.value;
-
-                        this.parentElement.textContent = newValue;
-
-                        updateActivityProgress();
-
-                    });
-
-
-
-                    input.addEventListener('keyup', function(e) {
-
-                        if (e.key === 'Enter') {
-
-                            this.blur();
-
-                        }
-
-                    });
-
-                });
-
-            }
-
-        });
-
-
-
-        // Save button functionality
-
-        document.getElementById('save-btn').addEventListener('click', function() {
-
-            alert('Activity data saved successfully!');
-
-        });
-
-
-
-        // Export button functionality
-
-        document.getElementById('export-btn').addEventListener('click', function() {
-
-            // Create CSV content
-
-            let csvContent = "Project,Activity,Progress,Budget Allocated,Budget Utilized,Proponent\n";
-
-
-
-            // Add sample data for demonstration
-
-            csvContent += "I-CARE,Employee Training Program,71%,₱250,000,₱165,000,Juan Dela Cruz\n";
-
-            csvContent += "SINULID,Reading Enhancement Program,65%,₱180,000,₱120,000,Maria Santos\n";
-
-            csvContent += "SAGIP,Dropout Prevention Program,90%,₱320,000,₱280,000,Carlos Reyes\n";
-
-
-
-            // Create download link
-
-            const blob = new Blob([csvContent], {
-                type: 'text/csv;charset=utf-8;'
-            });
-
-            const link = document.createElement('a');
-
-            const url = URL.createObjectURL(blob);
-
-
-
-            link.setAttribute('href', url);
-
-            link.setAttribute('download', 'labong_projects_export.csv');
-
-            link.style.visibility = 'hidden';
-
-
-
-            document.body.appendChild(link);
-
-            link.click();
-
-            document.body.removeChild(link);
-
-
-
-            alert('Projects exported to CSV file!');
-
-        });
-
-
-
-        // Form submission
-
-        document.getElementById('activity-form').addEventListener('submit', function(e) {
-
-            e.preventDefault();
-
-
-
-            // Get form values
-
-            const title = document.getElementById('activity-title').value;
-
-            const project = document.getElementById('project-category').value;
-
-            const budgetSource = document.getElementById('budget-source-create').value;
-
-            const firstName = document.getElementById('proponent-firstname').value;
-
-            const surname = document.getElementById('proponent-surname').value;
-
-            const budget = document.getElementById('budget-allocated-create').value;
-
-            const targetDate = document.getElementById('target-date-create').value;
-
-
-
-            // Show success message
-
-            alert(`Activity "${title}" created successfully under ${project} project!`);
-
-
-
-            // Reset form
-
-            this.reset();
-
-        });
-
-
-
-        // Initialize activity progress
-
-        updateActivityProgress();
-
-    });
-
-
-
-    // Update activity progress
-
-    function updateActivityProgress() {
-
-        // Calculate progress
-
-        let completedSteps = 0;
-
-        const checkboxes = document.querySelectorAll('.step-checkbox');
-
-        checkboxes.forEach(checkbox => {
-
-            if (checkbox.checked) completedSteps++;
-
-        });
-
-
-
-        const progressPercentage = Math.round((completedSteps / 15) * 100);
-
-        document.getElementById('progress-percentage').textContent = `${progressPercentage}%`;
-
-        document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
-
-
-
-        // Update deliverables status
-
-        document.getElementById('deliverables-status').textContent =
-
-            `Based on ${completedSteps}/15 deliverables`;
-
-
-
-        // Calculate accomplishment rating
-
-        const accomplishmentRating = Math.min(5, Math.round((completedSteps / 15) * 20) / 4);
-
-        document.getElementById('accomplishment-rating').textContent = accomplishmentRating.toFixed(1);
-
-        updateStars('.rating-card:first-child .rating-stars', accomplishmentRating);
-
-
-
-        // Calculate budget values
-
-        const allocated = parseFloat(document.getElementById('allocated-amount').textContent.replace(/,/g, '')) || 0;
-
-        const utilized = parseFloat(document.getElementById('utilized-amount').textContent.replace(/,/g, '')) || 0;
-
-        const remaining = allocated - utilized;
-
-        const burPercentage = allocated > 0 ? Math.round((utilized / allocated) * 100) : 0;
-
-
-
-        document.getElementById('budget-allocated').textContent = `₱${allocated.toLocaleString()}`;
-
-        document.getElementById('budget-utilized').textContent = `₱${utilized.toLocaleString()}`;
-
-        document.getElementById('budget-remaining').textContent = `₱${remaining.toLocaleString()}`;
-
-        document.getElementById('bur-percentage').textContent = `${burPercentage}%`;
-
-
-
-        // Update BUR rating
-
-        const burRating = calculateRating(burPercentage);
-
-        document.getElementById('bur-rating').textContent = burRating.toFixed(1);
-
-        updateStars('.rating-card:nth-child(2) .rating-stars', burRating);
-
-        document.getElementById('bur-status').textContent = `${burPercentage}% of budget utilized`;
-
-
-
-        // Calculate overall rating
-
-        const overallRating = (accomplishmentRating + burRating + 5) / 3;
-
-        document.getElementById('overall-rating').textContent = overallRating.toFixed(1);
-
-        updateStars('.rating-card:nth-child(4) .rating-stars', overallRating);
-
-
-
-        // Set overall status
-
-        let statusText = '';
-
-        if (overallRating >= 4.5) statusText = 'Activity Health: Excellent';
-
-        else if (overallRating >= 4) statusText = 'Activity Health: Very Good';
-
-        else if (overallRating >= 3.5) statusText = 'Activity Health: Good';
-
-        else if (overallRating >= 3) statusText = 'Activity Health: Fair';
-
-        else statusText = 'Activity Health: Needs Attention';
-
-
-
-        document.getElementById('overall-status').textContent = statusText;
-
-    }
-
-
-
-    // Calculate rating from 0-5
-
-    function calculateRating(percentage) {
-
-        if (percentage >= 90) return 5.0;
-
-        if (percentage >= 80) return 4.5;
-
-        if (percentage >= 70) return 4.0;
-
-        if (percentage >= 60) return 3.5;
-
-        if (percentage >= 50) return 3.0;
-
-        if (percentage >= 40) return 2.5;
-
-        if (percentage >= 30) return 2.0;
-
-        if (percentage >= 20) return 1.5;
-
-        if (percentage >= 10) return 1.0;
-
-        return 0.5;
-
-    }
-
-
-
-    // Update star rating display
-
-    function updateStars(selector, rating) {
-
-        const starsContainer = document.querySelector(selector);
-
-        starsContainer.innerHTML = '';
-
-
-
-        const fullStars = Math.floor(rating);
-
-        const hasHalfStar = rating % 1 >= 0.5;
-
-
-
-        // Add full stars
-
-        for (let i = 0; i < fullStars; i++) {
-
-            starsContainer.innerHTML += '<i class="star fas fa-star filled"></i>';
-
+    setTimeout(function() {
+        const alerts = document.getElementsByClassName('alert');
+        for (let i = 0; i < alerts.length; i++) {
+            alerts[i].style.display = 'none';
         }
-
-        // Add half star if needed
-
-        if (hasHalfStar) {
-
-            starsContainer.innerHTML += '<i class="star fas fa-star-half-alt filled"></i>';
-
-        }
-
-        // Add empty stars
-
-        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-        for (let i = 0; i < emptyStars; i++) {
-
-            starsContainer.innerHTML += '<i class="star far fa-star"></i>';
-
-        }
-
-    }
+    }, 3000);
     </script>
 
 </body>
