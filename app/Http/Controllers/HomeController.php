@@ -69,7 +69,8 @@ class HomeController extends Controller
     }
 
     public function login(){
-        if(session()->has('user')){
+        if(!empty(session()->get('user')))
+        {
             return redirect('/')->with('error', 'You are already logged in');
         }
         return view('login');
@@ -97,6 +98,21 @@ class HomeController extends Controller
     public function logout(Request $request){
         $request->session()->forget('user');
         return redirect('/login')->with('success', 'Logout successful');
+    }
+
+    //activity details
+    public function activityDetails($id){
+        if(empty(session()->get('user')))
+        {
+            return redirect('/login')->with('error', 'You must be logged in');
+        }
+        $projectModel = new \App\Models\projectModel();
+        $project = $projectModel->find($id);
+        if(!$project){
+            return redirect('/')->with('error', 'Project not found');
+        }
+        $data = ['project' => $project];
+        return view('details', $data);
     }
 
     //save project

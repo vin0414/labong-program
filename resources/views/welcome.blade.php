@@ -45,7 +45,6 @@
         </header>
         <div class="tabs">
             <div class="tab active" data-target="projects-view">Projects Dashboard</div>
-            <div class="tab" data-target="activity-view">Activity Details</div>
             <div class="tab" data-target="consolidated-view">Consolidated Report</div>
             @if(!empty(session()->get('user')))
             <div class="tab" data-target="create-view">Create Project</div>
@@ -85,8 +84,8 @@
                         <ul class="activity-list">
                             <?php foreach($listICare as $activity): ?>
                             <li data-project="icare">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -107,8 +106,8 @@
                         <ul class="activity-list">
                             <?php foreach($listSinulid as $activity): ?>
                             <li data-project="sinulid">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -129,8 +128,8 @@
                         <ul class="activity-list">
                             <?php foreach($listSagip as $activity): ?>
                             <li data-project="sagip">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -151,8 +150,8 @@
                         <ul class="activity-list">
                             <?php foreach($listLingap as $activity): ?>
                             <li data-project="lingap">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -174,8 +173,8 @@
                         <ul class="activity-list">
                             <?php foreach($listIsshed as $activity): ?>
                             <li data-project="isshed">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -196,8 +195,8 @@
                         <ul class="activity-list">
                             <?php foreach($listUX as $activity): ?>
                             <li data-project="ux">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -218,8 +217,8 @@
                         <ul class="activity-list">
                             <?php foreach($listGentri as $activity): ?>
                             <li data-project="gentri">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -240,8 +239,8 @@
                         <ul class="activity-list">
                             <?php foreach($listOkDepEd as $activity): ?>
                             <li data-project="OkDepEd">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -263,8 +262,8 @@
                         <ul class="activity-list">
                             <?php foreach($listSecurePuso as $activity): ?>
                             <li data-project="secure-puso">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -286,8 +285,8 @@
                         <ul class="activity-list">
                             <?php foreach($listDRRM as $activity): ?>
                             <li data-project="drrm-safe">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -309,8 +308,8 @@
                         <ul class="activity-list">
                             <?php foreach($listHumane as $activity): ?>
                             <li data-project="humane">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -331,8 +330,8 @@
                         <ul class="activity-list">
                             <?php foreach($listQMS as $activity): ?>
                             <li data-project="qms-eoms">
-                                <a href="" class="no-line"><?=$activity['name']?></a><span
-                                    class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
+                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -340,480 +339,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Activity Detail View -->
-        <div id="activity-view" class="tab-content">
-
-            <div class="hierarchy-nav">
-
-                <span id="back-to-projects">LABONG Program</span>
-
-                <i class="fas fa-chevron-right"></i>
-
-                <span id="current-project">I-CARE</span>
-
-                <i class="fas fa-chevron-right"></i>
-
-                <span id="current-activity">Employee Training Program</span>
-
-            </div>
-
-
-
-            <div class="activity-details">
-
-                <div class="section-title">
-
-                    <i class="fas fa-tasks"></i>
-
-                    <h2>Activity: <span class="editable-field" id="activity-name">Employee Training Program</span></h2>
-
-                </div>
-
-
-
-                <div class="activity-info-grid">
-
-                    <div class="info-card">
-
-                        <h3>Amount Allocated</h3>
-
-                        <p>₱<span class="editable-field" id="allocated-amount">250,000.00</span></p>
-
-                    </div>
-
-                    <div class="info-card">
-
-                        <h3>Amount Utilized</h3>
-
-                        <p>₱<span class="editable-field" id="utilized-amount">165,000.00</span></p>
-
-                    </div>
-
-                    <div class="info-card">
-
-                        <h3>Target Date</h3>
-
-                        <p><span class="editable-field" id="target-date">June 30, 2023</span></p>
-
-                    </div>
-
-                    <div class="info-card">
-
-                        <h3>Date Conducted</h3>
-
-                        <p><span class="editable-field" id="date-conducted">June 25, 2023</span></p>
-
-                    </div>
-
-                    <div class="info-card">
-
-                        <h3>Budget Source</h3>
-
-                        <p>
-
-                            <select id="budget-source" class="editable-field" style="width: 100%;">
-
-                                <option>MOOE-GAS</option>
-
-                                <option>MOOE-HRTD</option>
-
-                                <option>CO</option>
-
-                                <option>PSF</option>
-
-                                <option>SEF</option>
-
-                                <option>SMN</option>
-
-                                <option>Others</option>
-
-                            </select>
-
-                        </p>
-
-                    </div>
-
-                    <div class="info-card">
-
-                        <h3>Proponent</h3>
-
-                        <p><span class="editable-field" id="proponent-name">Juan Dela Cruz</span></p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="progress-container">
-
-                    <div class="progress-header">
-
-                        <h3>Overall Progress</h3>
-
-                        <span class="progress-percentage" id="progress-percentage">71%</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" id="progress-bar" style="width: 71%"></div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="steps-container">
-
-                    <div class="section-title">
-
-                        <i class="fas fa-list-ol"></i>
-
-                        <h2>Activity Deliverables</h2>
-
-                    </div>
-
-
-
-                    <div class="step-list">
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-1" checked disabled>
-
-                            <div class="step-label">1. Submission of WFP (Encoding in PMIS)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-2" checked disabled>
-
-                            <div class="step-label">2. Submission of Activity/Training Proposal</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-3" checked disabled>
-
-                            <div class="step-label">3. Approved proposal or request</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-4" checked disabled>
-
-                            <div class="step-label">4. Activity Request (AR)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-5" checked disabled>
-
-                            <div class="step-label">5. Purchase Request (PR)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-6" checked disabled>
-
-                            <div class="step-label">6. Procurement Process</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-7" checked disabled>
-
-                            <div class="step-label">7. Purchase Order (PO)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-8" checked>
-
-                            <div class="step-label">8. Delivery, Inspection and Acceptance</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-9">
-
-                            <div class="step-label">9. Release of Memorandum or Notice</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-10" disabled>
-
-                            <div class="step-label">10. Pre-Conference</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-11" disabled>
-
-                            <div class="step-label">11. Implementation</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-12" disabled>
-
-                            <div class="step-label">12. Post-Conference</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-13" disabled>
-
-                            <div class="step-label">13. Activity Completion Report</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-14" disabled>
-
-                            <div class="step-label">14. Liquidation Report</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-15" disabled>
-
-                            <div class="step-label">15. Payment/Disbursement</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="ratings-container">
-
-                <div class="section-title">
-
-                    <i class="fas fa-star"></i>
-
-                    <h2>Performance Ratings</h2>
-
-                </div>
-
-
-
-                <div class="rating-grid">
-
-                    <div class="rating-card">
-
-                        <h3>Accomplishment</h3>
-
-                        <div class="rating-value" id="accomplishment-rating">3.5</div>
-
-                        <div class="rating-stars">
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star-half-alt filled"></i>
-
-                            <i class="star far fa-star"></i>
-
-                        </div>
-
-                        <p id="deliverables-status">Based on 8/15 deliverables</p>
-
-                    </div>
-
-
-
-                    <div class="rating-card">
-
-                        <h3>BUR (Budget Utilization)</h3>
-
-                        <div class="rating-value" id="bur-rating">4.0</div>
-
-                        <div class="rating-stars">
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star far fa-star"></i>
-
-                        </div>
-
-                        <p id="bur-status">66% of budget utilized</p>
-
-                    </div>
-
-
-
-                    <div class="rating-card">
-
-                        <h3>Timeliness</h3>
-
-                        <div class="rating-value" id="timeliness-rating">5.0</div>
-
-                        <div class="rating-stars">
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                        </div>
-
-                        <p id="timeliness-status">5 days ahead of schedule</p>
-
-                    </div>
-
-
-
-                    <div class="rating-card">
-
-                        <h3>Overall Rating</h3>
-
-                        <div class="rating-value" id="overall-rating">4.2</div>
-
-                        <div class="rating-stars">
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star fas fa-star filled"></i>
-
-                            <i class="star far fa-star"></i>
-
-                        </div>
-
-                        <p id="overall-status">Activity Health: Good</p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="budget-section">
-
-                    <div class="section-title">
-
-                        <i class="fas fa-money-bill-wave"></i>
-
-                        <h2>Budget Overview</h2>
-
-                    </div>
-
-
-
-                    <div class="budget-grid">
-
-                        <div class="budget-card">
-
-                            <h3>Allocated</h3>
-
-                            <p id="budget-allocated">₱250,000</p>
-
-                        </div>
-
-                        <div class="budget-card">
-
-                            <h3>Utilized</h3>
-
-                            <p class="utilization" id="budget-utilized">₱165,000</p>
-
-                        </div>
-
-                        <div class="budget-card">
-
-                            <h3>Remaining</h3>
-
-                            <p class="remaining" id="budget-remaining">₱85,000</p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="budget-card" style="margin-top: 20px;">
-
-                        <h3>BUR (Budget Utilization Rate)</h3>
-
-                        <p class="bur" id="bur-percentage">66%</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
         <!-- Consolidated View -->
         <div id="consolidated-view" class="tab-content">
             <div class="section-title">
