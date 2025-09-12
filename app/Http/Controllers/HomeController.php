@@ -102,10 +102,6 @@ class HomeController extends Controller
 
     //activity details
     public function activityDetails($id){
-        if(empty(session()->get('user')))
-        {
-            return redirect('/login')->with('error', 'You must be logged in');
-        }
         $projectModel = new \App\Models\projectModel();
         $project = $projectModel->find($id);
         if(!$project){

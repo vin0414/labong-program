@@ -71,75 +71,32 @@
                     <h2>Activity: <span id="activity-name"><?=$project['name']?></span></h2>
                 </div>
                 <div class="activity-info-grid">
-
                     <div class="info-card">
-
                         <h3>Amount Allocated</h3>
-
-                        <p>₱<span class="editable-field" id="allocated-amount">250,000.00</span></p>
-
+                        <p>₱<span id="allocated-amount"><?=number_format($project['budget_amount'],2)?></span></p>
                     </div>
-
                     <div class="info-card">
-
                         <h3>Amount Utilized</h3>
-
-                        <p>₱<span class="editable-field" id="utilized-amount">165,000.00</span></p>
-
+                        <p>₱<span id="utilized-amount"><?=number_format($project['amount_spent'],2)?></span></p>
                     </div>
-
                     <div class="info-card">
-
                         <h3>Target Date</h3>
-
-                        <p><span class="editable-field" id="target-date">June 30, 2023</span></p>
-
-                    </div>
-
-                    <div class="info-card">
-
-                        <h3>Date Conducted</h3>
-
-                        <p><span class="editable-field" id="date-conducted">June 25, 2023</span></p>
-
-                    </div>
-
-                    <div class="info-card">
-
-                        <h3>Budget Source</h3>
-
-                        <p>
-
-                            <select id="budget-source" class="editable-field" style="width: 100%;">
-
-                                <option>MOOE-GAS</option>
-
-                                <option>MOOE-HRTD</option>
-
-                                <option>CO</option>
-
-                                <option>PSF</option>
-
-                                <option>SEF</option>
-
-                                <option>SMN</option>
-
-                                <option>Others</option>
-
-                            </select>
-
+                        <p><span id="target-date"><?=date('F d, Y',strtotime($project['implementation_date']))?></span>
                         </p>
-
                     </div>
-
                     <div class="info-card">
-
-                        <h3>Proponent</h3>
-
-                        <p><span class="editable-field" id="proponent-name">Juan Dela Cruz</span></p>
-
+                        <h3>Date Conducted</h3>
+                        <p><span id="date-conducted"><?=date('F d, Y',strtotime($project['created_at']))?></span></p>
                     </div>
-
+                    <div class="info-card">
+                        <h3>Budget Source</h3>
+                        <p><span id="allocated-amount"><?=$project['budget_source']?></span></p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Proponent</h3>
+                        <p><span id="proponent-name"><?=$project['first_name']?>&nbsp;<?=$project['last_name']?></span>
+                        </p>
+                    </div>
                 </div>
 
 
