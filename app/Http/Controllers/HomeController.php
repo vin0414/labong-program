@@ -107,7 +107,16 @@ class HomeController extends Controller
         if(!$project){
             return redirect('/')->with('error', 'Project not found');
         }
-        $data = ['project' => $project];
+        //get the total of activities tag as done
+        $activityModel = new \App\Models\activityModel();
+        $totalDone = $activityModel->where('project_id', $id)
+                                ->where('status', 1)
+                                ->count() ?? 0;
+        $total = $activityModel->where('project_id', $id)->count() ?? 0;
+        $percentage = $total > 0 ? round(($totalDone / $total) * 100, 2) : 0;
+        //get all the activities
+        $activities = clone $activityModel->where('project_id',$id)->get();
+        $data = ['project' => $project,'percentage' => $percentage,'activities'=>$activities];
         return view('details', $data);
     }
 

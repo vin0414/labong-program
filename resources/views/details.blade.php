@@ -98,215 +98,44 @@
                         </p>
                     </div>
                 </div>
-
-
-
                 <div class="progress-container">
-
                     <div class="progress-header">
-
                         <h3>Overall Progress</h3>
-
-                        <span class="progress-percentage" id="progress-percentage">71%</span>
-
+                        <span class="progress-percentage" id="progress-percentage"><?=$percentage?>%</span>
                     </div>
-
                     <div class="progress-bar">
-
-                        <div class="progress-fill" id="progress-bar" style="width: 71%"></div>
-
+                        <div class="progress-fill" id="progress-bar" style="width: <?=$percentage?>%"></div>
                     </div>
-
                 </div>
 
 
 
                 <div class="steps-container">
-
                     <div class="section-title">
-
                         <i class="fas fa-list-ol"></i>
-
                         <h2>Activity Deliverables</h2>
-
                     </div>
-
-
 
                     <div class="step-list">
-
+                        <?php $i = 1; ?>
+                        <?php foreach($activities as $row): ?>
                         <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-1" checked disabled>
-
-                            <div class="step-label">1. Submission of WFP (Encoding in PMIS)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
+                            <input type="checkbox" class="step-checkbox" id="step-<?=$row['activity_id']?>"
+                                value="<?=$row['activity_id']?>">
+                            <div class="step-label"><?=$i++;?>. <?=$row['description']?></div>
+                            <div class="step-status status-completed"><?=$row['status']?></div>
                         </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-2" checked disabled>
-
-                            <div class="step-label">2. Submission of Activity/Training Proposal</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-3" checked disabled>
-
-                            <div class="step-label">3. Approved proposal or request</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-4" checked disabled>
-
-                            <div class="step-label">4. Activity Request (AR)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-5" checked disabled>
-
-                            <div class="step-label">5. Purchase Request (PR)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-6" checked disabled>
-
-                            <div class="step-label">6. Procurement Process</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-7" checked disabled>
-
-                            <div class="step-label">7. Purchase Order (PO)</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-8" checked>
-
-                            <div class="step-label">8. Delivery, Inspection and Acceptance</div>
-
-                            <div class="step-status status-completed">Completed</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-9">
-
-                            <div class="step-label">9. Release of Memorandum or Notice</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-10" disabled>
-
-                            <div class="step-label">10. Pre-Conference</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-11" disabled>
-
-                            <div class="step-label">11. Implementation</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-12" disabled>
-
-                            <div class="step-label">12. Post-Conference</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-13" disabled>
-
-                            <div class="step-label">13. Activity Completion Report</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-14" disabled>
-
-                            <div class="step-label">14. Liquidation Report</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
-                        <div class="step-item">
-
-                            <input type="checkbox" class="step-checkbox" id="step-15" disabled>
-
-                            <div class="step-label">15. Payment/Disbursement</div>
-
-                            <div class="step-status status-pending">Pending</div>
-
-                        </div>
-
+                        <?php endforeach;?>
                     </div>
-
                 </div>
-
             </div>
 
-
-
             <div class="ratings-container">
-
                 <div class="section-title">
-
                     <i class="fas fa-star"></i>
-
                     <h2>Performance Ratings</h2>
-
                 </div>
-
-
-
                 <div class="rating-grid">
-
                     <div class="rating-card">
 
                         <h3>Accomplishment</h3>
