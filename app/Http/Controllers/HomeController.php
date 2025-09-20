@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+
 
 class HomeController extends Controller
 {
@@ -100,6 +103,82 @@ class HomeController extends Controller
         return redirect('/login')->with('success', 'Logout successful');
     }
 
+    public function edit($id)
+    {
+        $projectModel = new \App\Models\projectModel();
+        $project = $projectModel->find($id);
+        if(!$project){
+            return redirect('/')->with('error', 'Project not found');
+        }
+        $data = ['project'=>$project];
+        return view('edit-project',$data);
+    }
+
+    public function editProject(Request $request)
+    {
+        $projectModel = new \App\Models\projectModel();
+        $validatedData = $request->validate([
+            'project_id'=>'required|numeric|min:0',
+            'activity-title' => 'required|string|max:255',
+            'project-category' => 'required|string',
+            'budget-source-create' => 'required|string|max:255',
+            'proponent-firstname' => 'required|string|max:100',
+            'proponent-surname' => 'required|string|max:100',
+            'budget-allocated-create' => 'required|numeric|min:0',
+            'amount_spent' => 'required|numeric|min:0',
+            'target-date-create' => 'required|date',
+            'activity-description' => 'required|string',
+        ]);
+        // Find the existing record
+        $project = $projectModel::find($validatedData['project_id']);
+
+        if ($project) {
+            // Update the record with validated data
+            $project->update([
+                'activity_title' => $validatedData['activity-title'],
+                'project_category' => $validatedData['project-category'],
+                'budget_source' => $validatedData['budget-source-create'],
+                'proponent_firstname' => $validatedData['proponent-firstname'],
+                'proponent_surname' => $validatedData['proponent-surname'],
+                'budget_allocated' => $validatedData['budget-allocated-create'],
+                'amount_spent' => $validatedData['amount_spent'],
+                'target_date' => $validatedData['target-date-create'],
+                'activity_description' => $validatedData['activity-description'],
+            ]);
+
+            return redirect('/activity-details/'.$validatedData['project_id'])->with('success','Great! Successfully applied changes');
+        }
+        else
+        {
+            return redirect('/activity-details/'.$validatedData['project_id'])->with('error','Invalid! Project not found');
+        }
+    }
+
+    public function closeProject(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'value'=>'required|numeric'
+        ]);
+
+        if($validator->fails())
+        {
+            return response()->json(['errors'=>$validator->Errors()]);
+        }
+        else
+        {
+            $projectModel = new \App\Models\projectModel();
+            $project = $projectModel::find($request->value);
+            if($project)
+            {
+                $project->completed_date = date('Y-m-d');
+                $project->status=1;
+                $project->save();
+                return response()->json(['success'=>'Successfully tag as completed']);
+            }
+            return response()->json(['errors'=>'Something went wrong']);
+        }
+    }
+
     //activity details
     public function activityDetails($id){
         $projectModel = new \App\Models\projectModel();
@@ -112,11 +191,39 @@ class HomeController extends Controller
         $totalDone = $activityModel->where('project_id', $id)
                                 ->where('status', 1)
                                 ->count() ?? 0;
+        $totalPending = $activityModel->where('project_id', $id)
+                                ->where('status', 0)
+                                ->count() ?? 0;
         $total = $activityModel->where('project_id', $id)->count() ?? 0;
         $percentage = $total > 0 ? round(($totalDone / $total) * 100, 2) : 0;
+        //total star
+        $totalStar = ($percentage/100)*5 ?? 0;
         //get all the activities
         $activities = clone $activityModel->where('project_id',$id)->get();
-        $data = ['project' => $project,'percentage' => $percentage,'activities'=>$activities];
+        //bur
+        $bur = ($project['amount_spent']/$project['budget_amount'])*100 ?? 0;
+        $burStar = ($bur/100)*5 ?? 0;
+        //timeliness
+        $implementationDate = Carbon::parse($project['implementation_date']);
+        $completedDate = Carbon::parse($project['completed_date']);
+        $numDays = $implementationDate->diffInDays($completedDate, false);
+        $timeStar = 0;
+        //const overallRating = (accomplishmentRating + burRating + 5) / 3;
+        $overAll = ($totalStar + $burStar + $timeStar)/3 ?? 0;
+
+        $data = ['project' => $project,
+                'percentage' => $percentage,
+                'activities'=>$activities,
+                'total'=>$total,
+                'totalStar'=>$totalStar,
+                'pending'=>$totalPending,
+                'complete'=>$totalDone,
+                'bur'=>$bur,
+                'burStar'=>$burStar,
+                'timeStar'=>$timeStar,
+                'numDays'=>$numDays,
+                'overAll'=>$overAll,
+                'id'=>$id];
         return view('details', $data);
     }
 
@@ -148,11 +255,46 @@ class HomeController extends Controller
         $projectModel->budget_amount = $validatedData['budget-allocated-create'];
         $projectModel->amount_spent = 0; // Default amount spent
         $projectModel->implementation_date = $validatedData['target-date-create'];
+        $projectModel->completed_date = '';
         $projectModel->description = $validatedData['activity-description'];
         $projectModel->status = 0; // Default status
         $projectModel->created_by = $request->session()->get('user')->id;
         $projectModel->save();
 
         return redirect('/')->with('success','Great! Successfully submitted');
+    }
+
+    //save deliverables
+    public function save(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'task' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            // Handle failure manually
+            return response()->json(['errors' => $validator->errors()]);
+        }
+        else
+        {
+            $model = new \App\Models\activityModel();
+            $model->project_id = $request->input('project');
+            $model->description = $request->input('task');
+            $model->status = 0;
+            $model->save();
+            return response()->json(['success'=>'Successfully saved']);
+        }
+    }
+
+    public function updateStatus(Request $request)
+    {
+        $activityModel = new \App\Models\activityModel();
+        $activity = $activityModel::find($request->activity_id);
+        if ($activity) {
+            $activity->status = $request->status;
+            $activity->save();
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false], 404);
     }
 }

@@ -530,8 +530,6 @@
 
         </div>
 
-
-
         <!-- Create Project View -->
 
         <div id="create-view" class="tab-content">
@@ -582,13 +580,15 @@
                                 <label for="budget-source-create">Budget Source</label>
                                 <select name="budget-source-create" required>
                                     <option value="">Select Budget Source</option>
-                                    <option>MOOE-GAS</option>
-                                    <option>MOOE-HRTD</option>
-                                    <option>CO</option>
-                                    <option>PSF</option>
-                                    <option>SEF</option>
-                                    <option>SMN</option>
-                                    <option>Others</option>
+                                    <option {{old('budget-source-create')=='MOOE-GAS' ? 'selected': ''}}>MOOE-GAS
+                                    </option>
+                                    <option {{old('budget-source-create')=='MOOE-HRTD' ? 'selected': ''}}>MOOE-HRTD
+                                    </option>
+                                    <option {{old('budget-source-create')=='CO' ? 'selected': ''}}>CO</option>
+                                    <option {{old('budget-source-create')=='PSF' ? 'selected': ''}}>PSF</option>
+                                    <option {{old('budget-source-create')=='SEF' ? 'selected': ''}}>SEF</option>
+                                    <option {{old('budget-source-create')=='SMN' ? 'selected': ''}}>SMN</option>
+                                    <option {{old('budget-source-create')=='Others' ? 'selected': ''}}>Others</option>
                                 </select>
                                 @if($errors->has('budget-source-create'))
                                 <span class="text-danger">{{ $errors->first('budget-source-create') }}</span>
@@ -654,38 +654,22 @@
                 </form>
 
             </div>
-
         </div>
-
-
 
         <div class="instructions">
-
             <h2><i class="fas fa-info-circle"></i> How to Use This System</h2>
-
             <ul>
-
                 <li><strong>Program Hierarchy:</strong> LABONG Program → 12 Projects → Activities</li>
-
                 <li><strong>Navigation:</strong> Switch between tabs to access different features</li>
-
                 <li><strong>Projects Dashboard:</strong> View all 12 LABONG projects with their activities</li>
-
                 <li><strong>Activity Details:</strong> Track progress of specific activities with sequential
                     deliverables</li>
-
                 <li><strong>Consolidated Report:</strong> View program-wide progress and performance metrics</li>
-
                 <li><strong>Create Project:</strong> Add new activities to the system</li>
-
                 <li><strong>Export Data:</strong> Download project data in CSV format</li>
-
                 <li><strong>Offline Capability:</strong> Works without internet connection</li>
-
             </ul>
-
         </div>
-
     </div>
 
 
