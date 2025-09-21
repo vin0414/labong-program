@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
@@ -27,54 +27,278 @@ class HomeController extends Controller
                                     ->count();
         $totalPercentageICare = $activityICaretotal > 0 ? ($activityICareDone/$activityICaretotal)* 100 : 0;
         //total
+        $ICareBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','I-CARE')->groupBy('category')->first();
         $totalICare = $projectModel->where('category', 'I-Care')->count();
-        $listICare = $projectModel->where('category', 'I-Care')->get();
-        //SINULID
-        $totalSinulid = $projectModel->where('category', 'SINULID')->count();
-        $listSinulid = $projectModel->where('category', 'SINULID')->get();
-        //SAGIP
-        $totalSagip = $projectModel->where('category', 'SAGIP')->count();
-        $listSagip = $projectModel->where('category', 'SAGIP')->get();
-        //LINGAP
-        $totalLingap = $projectModel->where('category', 'LINGAP')->count();
-        $listLingap = $projectModel->where('category', 'LINGAP')->get();
-        //ISSHED
-        $totalIsshed = $projectModel->where('category', 'ISSHED')->count();
-        $listIsshed = $projectModel->where('category', 'ISSHED')->get();
-        //UX
-        $totalUX = $projectModel->where('category', 'UX')->count();
-        $listUX = $projectModel->where('category', 'UX')->get();
-        //Gentri Saliksik
-        $totalGentri = $projectModel->where('category', 'Gentri Saliksik')->count();
-        $listGentri = $projectModel->where('category', 'Gentri Saliksik')->get();
-        //OK sa DepEd Gentri
-        $totalOkDepEd = $projectModel->where('category', 'OK sa DepEd Gentri')->count();
-        $listOkDepEd = $projectModel->where('category', 'OK sa DepEd Gentri')->get();
-        //SECURE-PUSO
-        $totalSecurePuso = $projectModel->where('category', 'SECURE-PUSO')->count();
-        $listSecurePuso = $projectModel->where('category', 'SECURE-PUSO')->get();
-        //DRRM-SAFE
-        $totalDRRM = $projectModel->where('category', 'DRRM-SAFE')->count();
-        $listDRRM = $projectModel->where('category', 'DRRM-SAFE')->get();
-        //HUMANE
-        $totalHumane = $projectModel->where('category', 'HUMANE')->count();
-        $listHumane = $projectModel->where('category', 'HUMANE')->get();
-        //QMS/EOMS
-        $totalQMS = $projectModel->where('category', 'QMS/EOMS')->count();
-        $listQMS = $projectModel->where('category', 'QMS/EOMS')->get();
+        $listICare = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'I-CARE')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
 
-        $data = ['totalICare' => $totalICare,'ICarePercentage'=>$totalPercentageICare, 'listICare' => $listICare,
-                 'totalSinulid' => $totalSinulid, 'listSinulid' => $listSinulid,
-                 'totalSagip' => $totalSagip, 'listSagip' => $listSagip,
-                 'totalLingap' => $totalLingap, 'listLingap' => $listLingap,
-                 'totalIsshed' => $totalIsshed, 'listIsshed' => $listIsshed,
-                 'totalUX' => $totalUX, 'listUX' => $listUX,
-                 'totalGentri' => $totalGentri, 'listGentri' => $listGentri,
-                 'totalOkDepEd' => $totalOkDepEd, 'listOkDepEd' => $listOkDepEd,
-                 'totalSecurePuso' => $totalSecurePuso, 'listSecurePuso' => $listSecurePuso,
-                 'totalDRRM' => $totalDRRM, 'listDRRM' => $listDRRM,
-                 'totalHumane' => $totalHumane, 'listHumane' => $listHumane,
-                 'totalQMS' => $totalQMS, 'listQMS' => $listQMS,
+        //SINULID
+        $activitySinulidDone = $model->where('category','SINULID')
+                                    ->where('status',1)
+                                    ->count();
+        $activitySinulidtotal = $model->where('category','SINULID')
+                                    ->count();
+        $totalPercentageSinulid = $activitySinulidtotal > 0 ? ($activitySinulidDone/$activitySinulidtotal)* 100 : 0;
+        //total
+        $SinulidBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','SINULID')->groupBy('category')->first();
+        $totalSinulid = $projectModel->where('category', 'SINULID')->count();
+        $listSinulid = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'SINULID')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //SAGIP
+        $activitySagipDone = $model->where('category','SAGIP')
+                                    ->where('status',1)
+                                    ->count();
+        $activitySagiptotal = $model->where('category','SAGIP')
+                                    ->count();
+        $totalPercentageSagip = $activitySagiptotal > 0 ? ($activitySagipDone/$activitySagiptotal)* 100 : 0;
+        //total
+        $SagipBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','SAGIP')->groupBy('category')->first();
+        $totalSagip = $projectModel->where('category', 'SAGIP')->count();
+        $listSagip = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'SAGIP')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //LINGAP
+        $activityLingapDone = $model->where('category','LINGAP')
+                                    ->where('status',1)
+                                    ->count();
+        $activityLingaptotal = $model->where('category','LINGAP')
+                                    ->count();
+        $totalPercentageLingap = $activityLingaptotal > 0 ? ($activityLingapDone/$activityLingaptotal)* 100 : 0;
+        //total
+        $LingapBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','LINGAP')->groupBy('category')->first();
+        $totalLingap = $projectModel->where('category', 'LINGAP')->count();
+        $listLingap = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'LINGAP')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //ISSHED
+        $activityIsshedDone = $model->where('category','ISSHED')
+                                    ->where('status',1)
+                                    ->count();
+        $activityIsshedtotal = $model->where('category','ISSHED')
+                                    ->count();
+        $totalPercentageIsshed = $activityIsshedtotal > 0 ? ($activityIsshedDone/$activityIsshedtotal)* 100 : 0;
+        //total
+        $totalIsshed = $projectModel->where('category', 'ISSHED')->count();
+        $listIsshed = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'ISSHED')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //UX
+        $activityUxDone = $model->where('category','UX')
+                                    ->where('status',1)
+                                    ->count();
+        $activityUxtotal = $model->where('category','UX')
+                                    ->count();
+        $totalPercentageUx = $activityUxtotal > 0 ? ($activityUxDone/$activityUxtotal)* 100 : 0;
+        //total
+        $totalUX = $projectModel->where('category', 'UX')->count();
+        $listUX = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'UX')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //Gentri Saliksik
+        $activityGentriDone = $model->where('category','Gentri Saliksik')
+                                    ->where('status',1)
+                                    ->count();
+        $activityGentritotal = $model->where('category','Gentri Saliksik')
+                                    ->count();
+        $totalPercentageGentri = $activityGentritotal > 0 ? ($activityGentriDone/$activityGentritotal)* 100 : 0;
+        //total
+        $totalGentri = $projectModel->where('category', 'Gentri Saliksik')->count();
+        $listGentri = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'Gentri Saliksik')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //OK sa DepEd Gentri
+        $activityOkDepEdDone = $model->where('category','OK sa DepEd Gentri')
+                                    ->where('status',1)
+                                    ->count();
+        $activityOkDepEdtotal = $model->where('category','Ok sa DepEd Gentri')
+                                    ->count();
+        $totalPercentageOkDepEd = $activityOkDepEdtotal > 0 ? ($activityOkDepEdDone/$activityOkDepEdtotal)* 100 : 0;
+        //total
+        $totalOkDepEd = $projectModel->where('category', 'OK sa DepEd Gentri')->count();
+        $listOkDepEd = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'OK sa DepEd Gentri')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //SECURE-PUSO
+        $activitySecureDone = $model->where('category','SECURE-PUSO')
+                                    ->where('status',1)
+                                    ->count();
+        $activitySecuretotal = $model->where('category','SECURE-PUSO')
+                                    ->count();
+        $totalPercentageSecure = $activitySecuretotal > 0 ? ($activitySecureDone/$activitySecuretotal)* 100 : 0;
+        //total
+        $totalSecurePuso = $projectModel->where('category', 'SECURE-PUSO')->count();
+        $listSecurePuso = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'SECURE-PUSO')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //DRRM-SAFE
+        $activityDRRMDone = $model->where('category','DRRM-SAFE')
+                                    ->where('status',1)
+                                    ->count();
+        $activityDRRMtotal = $model->where('category','DRRM-SAFE')
+                                    ->count();
+        $totalPercentageDRRM = $activityDRRMtotal > 0 ? ($activityDRRMDone/$activityDRRMtotal)* 100 : 0;
+        //total
+        $totalDRRM = $projectModel->where('category', 'DRRM-SAFE')->count();
+        $listDRRM = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'DRRM-SAFE')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //HUMANE
+        $activityHumaneDone = $model->where('category','HUMANE')
+                                    ->where('status',1)
+                                    ->count();
+        $activityHumanetotal = $model->where('category','HUMANE')
+                                    ->count();
+        $totalPercentageHumane = $activityHumanetotal > 0 ? ($activityHumaneDone/$activityHumanetotal)* 100 : 0;
+        //total
+        $totalHumane = $projectModel->where('category', 'HUMANE')->count();
+        $listHumane = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'HUMANE')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        //QMS/EOMS
+        $activityQMSDone = $model->where('category','QMS/EOMS')
+                                    ->where('status',1)
+                                    ->count();
+        $activityQMStotal = $model->where('category','QMS/EOMS')
+                                    ->count();
+        $totalPercentageQMS = $activityQMStotal > 0 ? ($activityQMSDone/$activityQMStotal)* 100 : 0;
+        //total
+        $totalQMS = $projectModel->where('category', 'QMS/EOMS')->count();
+        $listQMS = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
+                    ->leftJoin(DB::raw('(
+                        SELECT
+                            project_id,
+                            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS done,
+                            COUNT(activity_id) AS total
+                        FROM activities
+                        GROUP BY project_id
+                    ) as activity_summary'), 'projects.project_id', '=', 'activity_summary.project_id')
+                    ->where('projects.category', 'QMS/EOMS')
+                    ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
+                    ->get();
+
+        $data = ['totalICare' => $totalICare,'ICarePercentage'=>$totalPercentageICare, 'listICare' => $listICare,'ICare'=>$ICareBudget,
+                 'totalSinulid' => $totalSinulid,'SinulidPercentage'=>$totalPercentageSinulid, 'listSinulid' => $listSinulid,'Sinulid'=>$SinulidBudget,
+                 'totalSagip' => $totalSagip,'SagipPercentage'=>$totalPercentageSagip, 'listSagip' => $listSagip,'Sagip'=>$SagipBudget,
+                 'totalLingap' => $totalLingap,'LingapPercentage'=>$totalPercentageLingap, 'listLingap' => $listLingap,'Lingap'=>$LingapBudget,
+                 'totalIsshed' => $totalIsshed,'IsshedPercentage'=>$totalPercentageIsshed, 'listIsshed' => $listIsshed,
+                 'totalUX' => $totalUX,'UxPercentage'=>$totalPercentageUx, 'listUX' => $listUX,
+                 'totalGentri' => $totalGentri,'GentriPercentage'=>$totalPercentageGentri, 'listGentri' => $listGentri,
+                 'totalOkDepEd' => $totalOkDepEd,'OkDepEdPercentage'=>$totalPercentageOkDepEd, 'listOkDepEd' => $listOkDepEd,
+                 'totalSecurePuso' => $totalSecurePuso,'SecurePercentage'=>$totalPercentageSecure, 'listSecurePuso' => $listSecurePuso,
+                 'totalDRRM' => $totalDRRM,'DRRMPercentage'=>$totalPercentageDRRM, 'listDRRM' => $listDRRM,
+                 'totalHumane' => $totalHumane,'HumanePercentage'=>$totalPercentageHumane, 'listHumane' => $listHumane,
+                 'totalQMS' => $totalQMS,'QMSPercentage'=>$totalPercentageQMS, 'listQMS' => $listQMS,
                  'total' => $total, 'totalBudget' => $totalBudget,
                  'percent' => $total > 0 ? round(($completeProject / $total) * 100, 2) : 0];
         return view('welcome',$data);
@@ -302,6 +526,10 @@ class HomeController extends Controller
 
     public function updateStatus(Request $request)
     {
+        if(empty(session()->get('user')))
+        {
+            return redirect('/login')->with('error', 'You must be logged in');
+        }
         $activityModel = new \App\Models\activityModel();
         $activity = $activityModel::find($request->activity_id);
         if ($activity) {

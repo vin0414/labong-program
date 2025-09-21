@@ -79,13 +79,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalICare ?> Activities</span>
-                            <span>Overall Progress: <?=$ICarePercentage ?>%</span>
+                            <span>Overall Progress: <?=number_format($ICarePercentage,2) ?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listICare as $activity): ?>
                             <li data-project="icare">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -101,13 +102,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalSinulid?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($SinulidPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listSinulid as $activity): ?>
                             <li data-project="sinulid">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -123,13 +125,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalSagip?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($SagipPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listSagip as $activity): ?>
                             <li data-project="sagip">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -145,13 +148,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalLingap?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($LingapPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listLingap as $activity): ?>
                             <li data-project="lingap">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -168,13 +172,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalIsshed?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($IsshedPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listIsshed as $activity): ?>
                             <li data-project="isshed">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -190,13 +195,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalUX?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($UxPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listUX as $activity): ?>
                             <li data-project="ux">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -212,13 +218,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalGentri?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($GentriPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listGentri as $activity): ?>
                             <li data-project="gentri">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -234,13 +241,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalOkDepEd?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($OkDepEdPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listOkDepEd as $activity): ?>
                             <li data-project="OkDepEd">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -257,13 +265,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalSecurePuso?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($SecurePercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listSecurePuso as $activity): ?>
                             <li data-project="secure-puso">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -280,13 +289,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalDRRM?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($DRRMPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listDRRM as $activity): ?>
                             <li data-project="drrm-safe">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -303,13 +313,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalHumane?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($HumanePercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listHumane as $activity): ?>
                             <li data-project="humane">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -325,13 +336,14 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalQMS?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=number_format($QMSPercentage,2)?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listQMS as $activity): ?>
                             <li data-project="qms-eoms">
-                                <a href="{{ route('activity-details',['id'=>$activity['project_id']]) }}"
-                                    class="no-line"><?=$activity['name']?></a><span class="activity-progress">0%</span>
+                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                    class="no-line"><?=$activity->name?></a><span
+                                    class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -385,149 +397,190 @@
 
 
             <div class="ratings-container">
-
                 <div class="section-title">
-
                     <i class="fas fa-tasks"></i>
-
                     <h2>Project Status Overview</h2>
-
                 </div>
-
-
-
                 <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-
                     <thead>
-
                         <tr style="background-color: #f1f8ff;">
-
                             <th style="padding: 12px; text-align: left;">Project</th>
-
                             <th style="padding: 12px; text-align: center;">Activities</th>
-
                             <th style="padding: 12px; text-align: center;">Progress</th>
-
                             <th style="padding: 12px; text-align: center;">Accomplishment</th>
-
                             <th style="padding: 12px; text-align: center;">BUR</th>
-
                             <th style="padding: 12px; text-align: center;">Timeliness</th>
-
                             <th style="padding: 12px; text-align: center;">Status</th>
-
                         </tr>
-
                     </thead>
-
                     <tbody>
-
                         <tr>
-
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">I-CARE</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">65%</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalICare?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($ICarePercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($ICarePercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($ICare->spent/$ICare->total)*5,2)?>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.8</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"><span
-                                    style="background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;">On
-                                    Track</span></td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
-
                         <tr>
-
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">SINULID</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">52%</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.0</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalSinulid?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($SinulidPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($SinulidPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($Sinulid->spent/$Sinulid->total)*5,2)?>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"><span
-                                    style="background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;">Needs
-                                    Attention</span></td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
-
                         <tr>
-
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">SAGIP</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">78%</td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalSagip?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($SagipPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($SagipPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($Sagip->spent/$Sagip->total)*5,2)?>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.5</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.5</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"><span
-                                    style="background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;">On
-                                    Track</span></td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
-
                         <tr>
-
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">LINGAP</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">5</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">60%</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.0</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.2</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"><span
-                                    style="background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;">Needs
-                                    Attention</span></td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalLingap?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($LingapPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($LingapPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                0
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
-
                         <tr>
-
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">ISSHED</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">2</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">40%</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">2.0</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">2.5</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.0</td>
-
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"><span
-                                    style="background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;">At
-                                    Risk</span></td>
-
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalIsshed?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($IsshedPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($IsshedPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
-
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee;">UX</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalUX?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($UxPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($UxPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee;">Gentri Saliksik</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalGentri?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($GentriPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($GentriPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee;">OK sa DepEd Gentri</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalOkDepEd?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($OkDepEdPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($OkDepEdPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee;">SECURE-PUSO</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalSecurePuso?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($SecurePercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($SecurePercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee;">DRRM-SAFE</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalDRRM?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($DRRMPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($DRRMPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee;">HUMANE</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalHumane?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($HumanePercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($HumanePercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee;">QMS/EOMS</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=$totalQMS?></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format($QMSPercentage,2)?>%</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <?=number_format(($QMSPercentage/100)*5,2)?>
+                            </td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                        </tr>
                     </tbody>
-
                 </table>
-
             </div>
-
         </div>
 
         <!-- Create Project View -->
