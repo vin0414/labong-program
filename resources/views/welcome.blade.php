@@ -79,7 +79,7 @@
                     <div class="project-body">
                         <div class="project-meta">
                             <span><?=$totalICare ?> Activities</span>
-                            <span>Overall Progress: 0%</span>
+                            <span>Overall Progress: <?=$ICarePercentage ?>%</span>
                         </div>
                         <ul class="activity-list">
                             <?php foreach($listICare as $activity): ?>

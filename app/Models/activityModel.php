@@ -14,6 +14,6 @@ class activityModel extends Model
 
     protected $primaryKey = 'activity_id';
     public $incrementing = true;
-    protected $fillable = ['category','project_id','description', 'status'];
+    protected $fillable = ['project_id','category','description', 'status'];
     public $timestamps = true;
 }

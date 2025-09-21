@@ -13,11 +13,20 @@ class HomeController extends Controller
 {
     public function home(){
         $projectModel = new \App\Models\projectModel();
+        $model = new \App\Models\activityModel();
+        //data
         $total = $projectModel->count() ?? 0;
         $totalBudget = $projectModel->sum('budget_amount') ?? 0;
         //get the total of project tag as 1
         $completeProject = $projectModel->where('status', 1)->count();
         //I-Care Projects
+        $activityICareDone = $model->where('category','I-Care')
+                                    ->where('status',1)
+                                    ->count();
+        $activityICaretotal = $model->where('category','I-Care')
+                                    ->count();
+        $totalPercentageICare = $activityICaretotal > 0 ? ($activityICareDone/$activityICaretotal)* 100 : 0;
+        //total
         $totalICare = $projectModel->where('category', 'I-Care')->count();
         $listICare = $projectModel->where('category', 'I-Care')->get();
         //SINULID
@@ -54,7 +63,7 @@ class HomeController extends Controller
         $totalQMS = $projectModel->where('category', 'QMS/EOMS')->count();
         $listQMS = $projectModel->where('category', 'QMS/EOMS')->get();
 
-        $data = ['totalICare' => $totalICare, 'listICare' => $listICare,
+        $data = ['totalICare' => $totalICare,'ICarePercentage'=>$totalPercentageICare, 'listICare' => $listICare,
                  'totalSinulid' => $totalSinulid, 'listSinulid' => $listSinulid,
                  'totalSagip' => $totalSagip, 'listSagip' => $listSagip,
                  'totalLingap' => $totalLingap, 'listLingap' => $listLingap,
@@ -277,8 +286,13 @@ class HomeController extends Controller
         }
         else
         {
+            $projectModel = new \App\Models\projectModel();
+            $project = $projectModel->where('project_id',$request->input('project'))
+                                    ->first();
+            //save
             $model = new \App\Models\activityModel();
             $model->project_id = $request->input('project');
+            $model->category = $project->category;
             $model->description = $request->input('task');
             $model->status = 0;
             $model->save();
