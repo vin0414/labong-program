@@ -424,7 +424,7 @@
                                 <?=number_format(($ICarePercentage/100)*5,2)?>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
-                                <?=number_format(($ICare->spent/$ICare->total)*5,2)?>
+                                <span id="icare_bur"></span>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.8</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
@@ -439,7 +439,7 @@
                                 <?=number_format(($SinulidPercentage/100)*5,2)?>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
-                                <?=number_format(($Sinulid->spent/$Sinulid->total)*5,2)?>
+                                <span id="sinulid_bur"></span>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
@@ -454,7 +454,7 @@
                                 <?=number_format(($SagipPercentage/100)*5,2)?>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
-                                <?=number_format(($Sagip->spent/$Sagip->total)*5,2)?>
+                                <span id="sagip_bur"></span>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
@@ -469,7 +469,7 @@
                                 <?=number_format(($LingapPercentage/100)*5,2)?>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
-                                0
+                                <span id="lingap_bur"></span>
                             </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
@@ -483,7 +483,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($IsshedPercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="isshed_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -496,7 +498,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($UxPercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="ux_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -509,7 +513,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($GentriPercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="gentri_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -522,7 +528,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($OkDepEdPercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="ok_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -535,7 +543,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($SecurePercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="secure_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -548,7 +558,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($DRRMPercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="drrm_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -561,7 +573,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($HumanePercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="humane_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -574,7 +588,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <?=number_format(($QMSPercentage/100)*5,2)?>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">3.5</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="qms_bur"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
@@ -736,8 +752,225 @@
             alerts[i].style.display = 'none';
         }
     }, 3000);
+    // Base URL of your Laravel API
+    const baseUrl = "{{ url('/') }}";
+    // Fetch ICare
+    fetch(baseUrl + '/icare')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('ICare Budget:', data.ICare);
+            // Example: display in UI
+            let rawValue = (data.ICare.spent / data.ICare.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('icare_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Sinulid
+    fetch(baseUrl + '/sinulid')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Sinulid Budget:', data.Sinulid);
+            // Example: display in UI
+            let rawValue = (data.Sinulid.spent / data.Sinulid.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('sinulid_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Sagip
+    fetch(baseUrl + '/sagip')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Sagip Budget:', data.Sagip);
+            // Example: display in UI
+            let rawValue = (data.Sagip.spent / data.Sagip.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('sagip_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Lingap
+    fetch(baseUrl + '/lingap')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Lingap Budget:', data.Lingap);
+            // Example: display in UI
+            let rawValue = (data.Lingap.spent / data.Lingap.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('lingap_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Isshed
+    fetch(baseUrl + '/isshed')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Isshed Budget:', data.Isshed);
+            // Example: display in UI
+            let rawValue = (data.Isshed.spent / data.Isshed.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('isshed_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch UX
+    fetch(baseUrl + '/ux')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('UX Budget:', data.UX);
+            // Example: display in UI
+            let rawValue = (data.UX.spent / data.UX.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('ux_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Gentri
+    fetch(baseUrl + '/gentri')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Gentri Budget:', data.Gentri);
+            // Example: display in UI
+            let rawValue = (data.Gentri.spent / data.Gentri.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('gentri_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Ok DepEd
+    fetch(baseUrl + '/okdeped')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Ok DepEd Budget:', data.OkDepEd);
+            // Example: display in UI
+            let rawValue = (data.OkDepEd.spent / data.OkDepEd.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('ok_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Secure
+    fetch(baseUrl + '/secure')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Secure Budget:', data.Secure);
+            // Example: display in UI
+            let rawValue = (data.Secure.spent / data.Secure.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('secure_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch DRRM
+    fetch(baseUrl + '/drrm')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('DRRM Budget:', data.DRRM);
+            // Example: display in UI
+            let rawValue = (data.DRRM.spent / data.DRRM.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('drrm_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Humane
+    fetch(baseUrl + '/humane')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Humane Budget:', data.Humane);
+            // Example: display in UI
+            let rawValue = (data.Humane.spent / data.Humane.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('humane_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch QMS
+    fetch(baseUrl + '/qms')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('QMS Budget:', data.QMS);
+            // Example: display in UI
+            let rawValue = (data.QMS.spent / data.QMS.total) * 5;
+            let value = Number(rawValue);
+            document.getElementById('qms_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
     </script>
-
 </body>
 
 </html>

@@ -27,7 +27,6 @@ class HomeController extends Controller
                                     ->count();
         $totalPercentageICare = $activityICaretotal > 0 ? ($activityICareDone/$activityICaretotal)* 100 : 0;
         //total
-        $ICareBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','I-CARE')->groupBy('category')->first();
         $totalICare = $projectModel->where('category', 'I-Care')->count();
         $listICare = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
                     ->leftJoin(DB::raw('(
@@ -50,7 +49,6 @@ class HomeController extends Controller
                                     ->count();
         $totalPercentageSinulid = $activitySinulidtotal > 0 ? ($activitySinulidDone/$activitySinulidtotal)* 100 : 0;
         //total
-        $SinulidBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','SINULID')->groupBy('category')->first();
         $totalSinulid = $projectModel->where('category', 'SINULID')->count();
         $listSinulid = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
                     ->leftJoin(DB::raw('(
@@ -73,7 +71,6 @@ class HomeController extends Controller
                                     ->count();
         $totalPercentageSagip = $activitySagiptotal > 0 ? ($activitySagipDone/$activitySagiptotal)* 100 : 0;
         //total
-        $SagipBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','SAGIP')->groupBy('category')->first();
         $totalSagip = $projectModel->where('category', 'SAGIP')->count();
         $listSagip = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
                     ->leftJoin(DB::raw('(
@@ -96,7 +93,6 @@ class HomeController extends Controller
                                     ->count();
         $totalPercentageLingap = $activityLingaptotal > 0 ? ($activityLingapDone/$activityLingaptotal)* 100 : 0;
         //total
-        $LingapBudget = $projectModel::selectRaw('SUM(budget_amount)total,SUM(amount_spent)spent')->where('category','LINGAP')->groupBy('category')->first();
         $totalLingap = $projectModel->where('category', 'LINGAP')->count();
         $listLingap = $projectModel::selectRaw('projects.name, projects.project_id, FORMAT(((activity_summary.done / activity_summary.total) * 100),2) as percentage')
                     ->leftJoin(DB::raw('(
@@ -287,10 +283,10 @@ class HomeController extends Controller
                     ->groupBy('projects.project_id', 'projects.name','activity_summary.done', 'activity_summary.total')
                     ->get();
 
-        $data = ['totalICare' => $totalICare,'ICarePercentage'=>$totalPercentageICare, 'listICare' => $listICare,'ICare'=>$ICareBudget,
-                 'totalSinulid' => $totalSinulid,'SinulidPercentage'=>$totalPercentageSinulid, 'listSinulid' => $listSinulid,'Sinulid'=>$SinulidBudget,
-                 'totalSagip' => $totalSagip,'SagipPercentage'=>$totalPercentageSagip, 'listSagip' => $listSagip,'Sagip'=>$SagipBudget,
-                 'totalLingap' => $totalLingap,'LingapPercentage'=>$totalPercentageLingap, 'listLingap' => $listLingap,'Lingap'=>$LingapBudget,
+        $data = ['totalICare' => $totalICare,'ICarePercentage'=>$totalPercentageICare, 'listICare' => $listICare,
+                 'totalSinulid' => $totalSinulid,'SinulidPercentage'=>$totalPercentageSinulid, 'listSinulid' => $listSinulid,
+                 'totalSagip' => $totalSagip,'SagipPercentage'=>$totalPercentageSagip, 'listSagip' => $listSagip,
+                 'totalLingap' => $totalLingap,'LingapPercentage'=>$totalPercentageLingap, 'listLingap' => $listLingap,
                  'totalIsshed' => $totalIsshed,'IsshedPercentage'=>$totalPercentageIsshed, 'listIsshed' => $listIsshed,
                  'totalUX' => $totalUX,'UxPercentage'=>$totalPercentageUx, 'listUX' => $listUX,
                  'totalGentri' => $totalGentri,'GentriPercentage'=>$totalPercentageGentri, 'listGentri' => $listGentri,
