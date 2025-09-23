@@ -1083,6 +1083,238 @@
         .catch(error => {
             console.error('Fetch error:', error);
         });
+    // Fetch Lingap
+    fetch(baseUrl + '/timeliness-lingap')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Lingap:', data.Lingap.total);
+            if (!data.Lingap || data.Lingap.total === null) {
+                document.getElementById('lingap_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.Lingap.total <= 0) {
+                    document.getElementById('lingap_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.Lingap.total > 0 && data.Lingap.total <= 7) {
+                    document.getElementById('lingap_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.Lingap.total > 7 && data.Lingap.total <= 31) {
+                    document.getElementById('lingap_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.Lingap.total <= 90) {
+                    document.getElementById('lingap_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('lingap_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Isshed
+    fetch(baseUrl + '/timeliness-isshed')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Isshed:', data.Isshed.total);
+            if (!data.Isshed || data.Isshed.total === null) {
+                document.getElementById('isshed_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.Isshed.total <= 0) {
+                    document.getElementById('isshed_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.Isshed.total > 0 && data.Isshed.total <= 7) {
+                    document.getElementById('isshed_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.Isshed.total > 7 && data.Isshed.total <= 31) {
+                    document.getElementById('isshed_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.Isshed.total <= 90) {
+                    document.getElementById('isshed_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('isshed_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch UX
+    fetch(baseUrl + '/timeliness-ux')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('UX:', data.UX.total);
+            if (!data.UX || data.UX.total === null) {
+                document.getElementById('ux_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.UX.total <= 0) {
+                    document.getElementById('ux_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.UX.total > 0 && data.UX.total <= 7) {
+                    document.getElementById('ux_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.UX.total > 7 && data.UX.total <= 31) {
+                    document.getElementById('ux_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.UX.total <= 90) {
+                    document.getElementById('ux_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('ux_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Gentri
+    fetch(baseUrl + '/timeliness-gentri')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Gentri:', data.Gentri.total);
+            if (!data.Gentri || data.Gentri.total === null) {
+                document.getElementById('gentri_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.Gentri.total <= 0) {
+                    document.getElementById('gentri_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.Gentri.total > 0 && data.Gentri.total <= 7) {
+                    document.getElementById('gentri_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.Gentri.total > 7 && data.Gentri.total <= 31) {
+                    document.getElementById('gentri_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.Gentri.total <= 90) {
+                    document.getElementById('gentri_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('gentri_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch OkDepEd
+    fetch(baseUrl + '/timeliness-okdeped')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('OK DepEd:', data.OkDepEd.total);
+            if (!data.OkDepEd || data.OkDepEd.total === null) {
+                document.getElementById('ok_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.OkDepEd.total <= 0) {
+                    document.getElementById('ok_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.OkDepEd.total > 0 && data.OkDepEd.total <= 7) {
+                    document.getElementById('ok_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.OkDepEd.total > 7 && data.OkDepEd.total <= 31) {
+                    document.getElementById('ok_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.OkDepEd.total <= 90) {
+                    document.getElementById('ok_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('ok_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Secure
+    fetch(baseUrl + '/timeliness-secure')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Secure:', data.Secure.total);
+            if (!data.Secure || data.Secure.total === null) {
+                document.getElementById('secure_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.Secure.total <= 0) {
+                    document.getElementById('secure_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.Secure.total > 0 && data.Secure.total <= 7) {
+                    document.getElementById('secure_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.Secure.total > 7 && data.Secure.total <= 31) {
+                    document.getElementById('secure_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.Secure.total <= 90) {
+                    document.getElementById('secure_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('secure_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch DRRM
+    fetch(baseUrl + '/timeliness-drrm')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('DRRM:', data.DRRM.total);
+            if (!data.DRRM || data.DRRM.total === null) {
+                document.getElementById('drrm_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.DRRM.total <= 0) {
+                    document.getElementById('drrm_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.DRRM.total > 0 && data.DRRM.total <= 7) {
+                    document.getElementById('drrm_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.DRRM.total > 7 && data.DRRM.total <= 31) {
+                    document.getElementById('drrm_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.DRRM.total <= 90) {
+                    document.getElementById('drrm_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('drrm_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Humane
+    fetch(baseUrl + '/timeliness-humane')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Humane:', data.Humane.total);
+            if (!data.Humane || data.Humane.total === null) {
+                document.getElementById('humane_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.Humane.total <= 0) {
+                    document.getElementById('humane_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.Humane.total > 0 && data.Humane.total <= 7) {
+                    document.getElementById('humane_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.Humane.total > 7 && data.Humane.total <= 31) {
+                    document.getElementById('humane_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.Humane.total <= 90) {
+                    document.getElementById('humane_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('humane_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
     </script>
 </body>
 

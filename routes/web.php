@@ -45,4 +45,8 @@ Route::middleware('api')->group(function () {
     Route::get('timeliness-ux',[ApiController::class,'UXTimeLine']);
     Route::get('timeliness-gentri',[ApiController::class,'GentriTimeLine']);
     Route::get('timeliness-okdeped',[ApiController::class,'OkDepEdTimeLine']);
+    Route::get('timeliness-secure',[ApiController::class,'SecureTimeLine']);
+    Route::get('timeliness-drrm',[ApiController::class,'DRRMTimeLine']);
+    Route::get('timeliness-humane',[ApiController::class,'HumaneTimeLine']);
+    Route::get('timeliness-qms',[ApiController::class,'QMSTimeLine']);
 });

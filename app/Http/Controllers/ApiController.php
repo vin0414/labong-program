@@ -223,7 +223,7 @@ class ApiController extends Controller
         ]);
     }
 
-    public function IsshedLine()
+    public function IsshedTImeLine()
     {
         $timeLineIsshed = projectModel::selectRaw(
             'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
@@ -253,7 +253,7 @@ class ApiController extends Controller
         ]);
     }
 
-     public function GentriTimeLine()
+    public function GentriTimeLine()
     {
         $timeLineGentri = projectModel::selectRaw(
             'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
@@ -268,7 +268,7 @@ class ApiController extends Controller
         ]);
     }
 
-     public function OkDepEdTimeLine()
+    public function OkDepEdTimeLine()
     {
         $timeLineOkDepEd = projectModel::selectRaw(
             'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
@@ -279,6 +279,66 @@ class ApiController extends Controller
         return response()->json([
             'OkDepEd' => [
                 'total' => $timeLineOkDepEd->total_days
+            ]
+        ]);
+    }
+
+    public function SecureTimeLine()
+    {
+        $timeLineSecure = projectModel::selectRaw(
+            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+        ->where('category', 'SECURE-PUSO')
+        ->whereNotNull('implementation_date')
+        ->first();
+
+        return response()->json([
+            'Secure' => [
+                'total' => $timeLineSecure->total_days
+            ]
+        ]);
+    }
+
+    public function DRRMTimeLine()
+    {
+        $timeLineDRRM = projectModel::selectRaw(
+            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+        ->where('category', 'DRRM-SAFE')
+        ->whereNotNull('implementation_date')
+        ->first();
+
+        return response()->json([
+            'DRRM' => [
+                'total' => $timeLineDRRM->total_days
+            ]
+        ]);
+    }
+
+    public function HumaneTimeLine()
+    {
+        $timeLineHumane = projectModel::selectRaw(
+            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+        ->where('category', 'HUMANE')
+        ->whereNotNull('implementation_date')
+        ->first();
+
+        return response()->json([
+            'Humane' => [
+                'total' => $timeLineHumane->total_days
+            ]
+        ]);
+    }
+
+    public function QMSTimeLine()
+    {
+        $timeLineQMS = projectModel::selectRaw(
+            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+        ->where('category', 'QMS/EOMS')
+        ->whereNotNull('implementation_date')
+        ->first();
+
+        return response()->json([
+            'QMS' => [
+                'total' => $timeLineQMS->total_days
             ]
         ]);
     }
