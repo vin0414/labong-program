@@ -435,8 +435,25 @@ class HomeController extends Controller
         //timeliness
         $implementationDate = Carbon::parse($project['implementation_date']);
         $completedDate = Carbon::parse($project['completed_date']);
-        $numDays = $implementationDate->diffInDays($completedDate, false);
-        $timeStar = 0;
+        $numDays = $implementationDate->diffInDays($completedDate);
+        $timeStar=0;
+        if(empty($project['completed_date']))
+        {
+            $timeStar=0;
+        }
+        else
+        {
+            if($numDays<=0):
+                $timeStar=5;
+            elseif($numDays>0 && $numDays <=7):
+                $timeStar=4;
+            elseif($numDays > 7 &&  $numDays<=31):
+                $timeStar=3;
+            elseif($numDays<=90):
+                $timeStar=2;
+            else: $timeStar=1;
+            endif;
+        }
         //const overallRating = (accomplishmentRating + burRating + 5) / 3;
         $overAll = ($totalStar + $burStar + $timeStar)/3 ?? 0;
 
@@ -451,6 +468,7 @@ class HomeController extends Controller
                 'burStar'=>$burStar,
                 'timeStar'=>$timeStar,
                 'numDays'=>$numDays,
+                'completeDays'=>$project['completed_date'],
                 'overAll'=>$overAll,
                 'id'=>$id];
         return view('details', $data);

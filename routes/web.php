@@ -23,6 +23,7 @@ Route::middleware('check.user')->group(function(){
 });
 //api
 Route::middleware('api')->group(function () {
+    //bur
     Route::get('icare', [ApiController::class, 'ICare']);
     Route::get('sinulid', [ApiController::class, 'Sinulid']);
     Route::get('sagip', [ApiController::class, 'Sagip']);
@@ -35,4 +36,13 @@ Route::middleware('api')->group(function () {
     Route::get('drrm', [ApiController::class, 'DRRM']);
     Route::get('humane', [ApiController::class, 'Humane']);
     Route::get('qms', [ApiController::class, 'QMS']);
+    //timeliness
+    Route::get('timeliness-icare',[ApiController::class,'ICareTimeLine']);
+    Route::get('timeliness-sinulid',[ApiController::class,'SinulidTimeLine']);
+    Route::get('timeliness-sagip',[ApiController::class,'SagipTimeLine']);
+    Route::get('timeliness-lingap',[ApiController::class,'LingapTimeLine']);
+    Route::get('timeliness-isshed',[ApiController::class,'IsshedTimeLine']);
+    Route::get('timeliness-ux',[ApiController::class,'UXTimeLine']);
+    Route::get('timeliness-gentri',[ApiController::class,'GentriTimeLine']);
+    Route::get('timeliness-okdeped',[ApiController::class,'OkDepEdTimeLine']);
 });

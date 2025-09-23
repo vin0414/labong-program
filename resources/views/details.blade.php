@@ -263,25 +263,32 @@
                         <div class="rating-stars">
                             <?php
                         $fullStars = floor($timeStar);               // Number of full stars
-                        $halfStar = ($totalStar - $fullStars) >= 0.5; // Whether to show a half star
+                        $halfStar = 0; // Whether to show a half star
                         $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0); // Remaining empty stars
                         // Full stars
                         for ($i = 0; $i < $fullStars; $i++) {
                             echo '<i class="star fas fa-star filled"></i>';
                         }
                         // Half star
-                        if ($halfStar) {
-                            echo '<i class="star fas fa-star-half-alt filled"></i>';
-                        }
-                        // Empty stars
+                        // if ($halfStar) {
+                        //     echo '<i class="star fas fa-star-half-alt filled"></i>';
+                        // }
+                        // // Empty stars
                         for ($i = 0; $i < $emptyStars; $i++) {
                             echo '<i class="star far fa-star"></i>';
                         }
                         ?>
                         </div>
                         <p id="timeliness-status">
-                            @if ($numDays < 0) {{ $numDays }} days ahead of schedule @elseif ($numDays===0) On time
-                                @else Late by {{ abs($numDays) }} days @endif </p>
+                            @php
+                            if(empty($completeDays)){ echo 'None';}
+                            else
+                            {
+                            if($numDays<0){echo abs($numDays).' days ahead of schedule';} else
+                                if($numDays==0){echo 'On time schedule' ;} else if($numDays>0){echo 'Late by
+                                '.$numDays.' days';}
+                                }
+                                @endphp
                     </div>
 
                     <div class="rating-card">

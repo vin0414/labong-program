@@ -426,7 +426,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="icare_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.8</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="icare_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -441,7 +443,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="sinulid_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="sinulid_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -456,7 +460,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="sagip_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="sagip_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -471,7 +477,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="lingap_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="lingap_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -486,7 +494,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="isshed_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="isshed_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -501,7 +511,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="ux_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="ux_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -516,7 +528,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="gentri_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="gentri_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -531,7 +545,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="ok_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="ok_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -546,7 +562,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="secure_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="secure_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -561,7 +579,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="drrm_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="drrm_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -576,7 +596,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="humane_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="humane_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                         <tr>
@@ -591,7 +613,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="qms_bur"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">4.0</td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="qms_timeline"></span>
+                            </td>
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
                         </tr>
                     </tbody>
@@ -966,6 +990,95 @@
             let rawValue = (data.QMS.spent / data.QMS.total) * 5;
             let value = Number(rawValue);
             document.getElementById('qms_bur').innerHTML = (Number.isNaN(value) ? 0 : value).toFixed(2);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    </script>
+    <script>
+    // Fetch ICare
+    fetch(baseUrl + '/timeliness-icare')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('ICare:', data.ICare.total);
+            if (!data.ICare || data.ICare.total === null) {
+                document.getElementById('icare_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.ICare.total <= 0) {
+                    document.getElementById('icare_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.ICare.total > 0 && data.ICare.total <= 7) {
+                    document.getElementById('icare_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.ICare.total > 7 && data.ICare.total <= 31) {
+                    document.getElementById('icare_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.ICare.total <= 90) {
+                    document.getElementById('icare_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('icare_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Sinulid
+    fetch(baseUrl + '/timeliness-sinulid')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Sinulid:', data.Sinulid.total);
+            if (!data.Sinulid || data.Sinulid.total === null) {
+                document.getElementById('sinulid_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.Sinulid.total <= 0) {
+                    document.getElementById('sinulid_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.Sinulid.total > 0 && data.Sinulid.total <= 7) {
+                    document.getElementById('sinulid_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.Sinulid.total > 7 && data.Sinulid.total <= 31) {
+                    document.getElementById('sinulid_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.Sinulid.total <= 90) {
+                    document.getElementById('sinulid_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('sinulid_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch Sagip
+    fetch(baseUrl + '/timeliness-sagip')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Sagip:', data.Sagip.total);
+            if (!data.Sagip || data.Sagip.total === null) {
+                document.getElementById('sagip_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.Sagip.total <= 0) {
+                    document.getElementById('sagip_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.Sagip.total > 0 && data.Sagip.total <= 7) {
+                    document.getElementById('sagip_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.Sagip.total > 7 && data.Sagip.total <= 31) {
+                    document.getElementById('sagip_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.Sagip.total <= 90) {
+                    document.getElementById('sagip_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('sagip_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
         })
         .catch(error => {
             console.error('Fetch error:', error);
