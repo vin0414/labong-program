@@ -166,7 +166,7 @@ class ApiController extends Controller
     public function ICareTimeLine()
     {
         $timeLineICare = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'I-CARE')
         ->whereNotNull('implementation_date')
         ->first();
@@ -181,7 +181,7 @@ class ApiController extends Controller
     public function SinulidTimeLine()
     {
         $timeLineSinulid = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'SINULID')
         ->whereNotNull('implementation_date')
         ->first();
@@ -196,7 +196,7 @@ class ApiController extends Controller
      public function SagipTimeLine()
     {
         $timeLineSagip = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'SAGIP')
         ->whereNotNull('implementation_date')
         ->first();
@@ -211,7 +211,7 @@ class ApiController extends Controller
      public function LingapTimeLine()
     {
         $timeLineLingap = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'LINGAP')
         ->whereNotNull('implementation_date')
         ->first();
@@ -226,7 +226,7 @@ class ApiController extends Controller
     public function IsshedTImeLine()
     {
         $timeLineIsshed = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'ISSHED')
         ->whereNotNull('implementation_date')
         ->first();
@@ -241,7 +241,7 @@ class ApiController extends Controller
     public function UXTimeLine()
     {
         $timeLineUX = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'UX')
         ->whereNotNull('implementation_date')
         ->first();
@@ -256,7 +256,7 @@ class ApiController extends Controller
     public function GentriTimeLine()
     {
         $timeLineGentri = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'Gentri Saliksik')
         ->whereNotNull('implementation_date')
         ->first();
@@ -271,7 +271,7 @@ class ApiController extends Controller
     public function OkDepEdTimeLine()
     {
         $timeLineOkDepEd = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'OK sa Gentri DepEd')
         ->whereNotNull('implementation_date')
         ->first();
@@ -286,7 +286,7 @@ class ApiController extends Controller
     public function SecureTimeLine()
     {
         $timeLineSecure = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'SECURE-PUSO')
         ->whereNotNull('implementation_date')
         ->first();
@@ -301,7 +301,7 @@ class ApiController extends Controller
     public function DRRMTimeLine()
     {
         $timeLineDRRM = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'DRRM-SAFE')
         ->whereNotNull('implementation_date')
         ->first();
@@ -316,7 +316,7 @@ class ApiController extends Controller
     public function HumaneTimeLine()
     {
         $timeLineHumane = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'HUMANE')
         ->whereNotNull('implementation_date')
         ->first();
@@ -331,7 +331,7 @@ class ApiController extends Controller
     public function QMSTimeLine()
     {
         $timeLineQMS = projectModel::selectRaw(
-            'ABS(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
+            '(SUM(DATEDIFF(COALESCE(completed_date, CURDATE()), implementation_date))) AS total_days')
         ->where('category', 'QMS/EOMS')
         ->whereNotNull('implementation_date')
         ->first();

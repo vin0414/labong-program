@@ -429,7 +429,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="icare_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="icare_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">SINULID</td>
@@ -446,7 +448,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="sinulid_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="sinulid_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">SAGIP</td>
@@ -463,7 +467,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="sagip_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="sagip_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">LINGAP</td>
@@ -480,7 +486,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="lingap_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="lingap_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">ISSHED</td>
@@ -497,7 +505,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="isshed_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="isshed_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">UX</td>
@@ -514,7 +524,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="ux_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="ux_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">Gentri Saliksik</td>
@@ -531,7 +543,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="gentri_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="gentri_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">OK sa DepEd Gentri</td>
@@ -548,7 +562,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="ok_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="ok_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">SECURE-PUSO</td>
@@ -565,7 +581,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="secure_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="secure_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">DRRM-SAFE</td>
@@ -582,7 +600,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="drrm_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="drrm_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">HUMANE</td>
@@ -599,7 +619,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="humane_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="humane_status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td style="padding: 12px; border-bottom: 1px solid #eee;">QMS/EOMS</td>
@@ -616,7 +638,9 @@
                             <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
                                 <span id="qms_timeline"></span>
                             </td>
-                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"></td>
+                            <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+                                <span id="qms_status"></span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1021,6 +1045,22 @@
                     document.getElementById('icare_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
             }
+            let task = <?= isset($ICarePercentage) ? (($ICarePercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('icare_bur').textContent);
+            let time = parseFloat(document.getElementById('icare_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('icare_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('icare_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('icare_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('icare_status').innerHTML = '-';
+            }
         })
         .catch(error => {
             console.error('Fetch error:', error);
@@ -1049,6 +1089,22 @@
                 } else {
                     document.getElementById('sinulid_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
+            }
+            let task = <?= isset($SinulidPercentage) ? (($SinulidPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('sinulid_bur').textContent);
+            let time = parseFloat(document.getElementById('sinulid_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('sinulid_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('sinulid_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('sinulid_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('sinulid_status').innerHTML = '-';
             }
         })
         .catch(error => {
@@ -1079,6 +1135,22 @@
                     document.getElementById('sagip_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
             }
+            let task = <?= isset($SagipPercentage) ? (($SagipPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('sagip_bur').textContent);
+            let time = parseFloat(document.getElementById('sagip_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('sagip_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('sagip_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('sagip_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('sagip_status').innerHTML = '-';
+            }
         })
         .catch(error => {
             console.error('Fetch error:', error);
@@ -1107,6 +1179,22 @@
                 } else {
                     document.getElementById('lingap_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
+            }
+            let task = <?= isset($LingapPercentage) ? (($LingapPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('lingap_bur').textContent);
+            let time = parseFloat(document.getElementById('lingap_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('lingap_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('lingap_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('lingap_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('lingap_status').innerHTML = '-';
             }
         })
         .catch(error => {
@@ -1137,6 +1225,22 @@
                     document.getElementById('isshed_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
             }
+            let task = <?= isset($IsshedPercentage) ? (($IsshedPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('isshed_bur').textContent);
+            let time = parseFloat(document.getElementById('isshed_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('isshed_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('isshed_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('isshed_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('isshed_status').innerHTML = '-';
+            }
         })
         .catch(error => {
             console.error('Fetch error:', error);
@@ -1165,6 +1269,22 @@
                 } else {
                     document.getElementById('ux_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
+            }
+            let task = <?= isset($UxPercentage) ? (($UxPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('ux_bur').textContent);
+            let time = parseFloat(document.getElementById('ux_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('ux_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('ux_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('ux_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('ux_status').innerHTML = '-';
             }
         })
         .catch(error => {
@@ -1195,6 +1315,22 @@
                     document.getElementById('gentri_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
             }
+            let task = <?= isset($GentriPercentage) ? (($GentriPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('gentri_bur').textContent);
+            let time = parseFloat(document.getElementById('gentri_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('gentri_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('gentri_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('gentri_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('gentri_status').innerHTML = '-';
+            }
         })
         .catch(error => {
             console.error('Fetch error:', error);
@@ -1223,6 +1359,22 @@
                 } else {
                     document.getElementById('ok_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
+            }
+            let task = <?= isset($OkDepEdPercentage) ? (($OkDepEdPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('ok_bur').textContent);
+            let time = parseFloat(document.getElementById('ok_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('ok_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('ok_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('ok_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('ok_status').innerHTML = '-';
             }
         })
         .catch(error => {
@@ -1253,6 +1405,22 @@
                     document.getElementById('secure_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
             }
+            let task = <?= isset($SecurePercentage) ? (($SecurePercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('secure_bur').textContent);
+            let time = parseFloat(document.getElementById('secure_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('secure_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('secure_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('secure_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('secure_status').innerHTML = '-';
+            }
         })
         .catch(error => {
             console.error('Fetch error:', error);
@@ -1282,6 +1450,22 @@
                     document.getElementById('drrm_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
             }
+            let task = <?= isset($DRRMPercentage) ? (($DRRMPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('drrm_bur').textContent);
+            let time = parseFloat(document.getElementById('drrm_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('drrm_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('drrm_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('drrm_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('drrm_status').innerHTML = '-';
+            }
         })
         .catch(error => {
             console.error('Fetch error:', error);
@@ -1310,6 +1494,68 @@
                 } else {
                     document.getElementById('humane_timeline').innerHTML = Math.round(1).toFixed(2);
                 }
+            }
+            let task = <?= isset($HumanePercentage) ? (($HumanePercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('humane_bur').textContent);
+            let time = parseFloat(document.getElementById('humane_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('humane_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('humane_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('humane_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('humane_status').innerHTML = '-';
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // Fetch QMS/EOMS
+    fetch(baseUrl + '/timeliness-qms')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+            compute();
+        })
+        .then(data => {
+            console.log('QMS/EOMS:', data.QMS.total);
+            if (!data.QMS || data.QMS.total === null) {
+                document.getElementById('qms_timeline').innerHTML = Math.round(0).toFixed(2);
+            } else {
+                if (data.QMS.total <= 0) {
+                    document.getElementById('qms_timeline').innerHTML = Math.round(5).toFixed(2);
+                } else if (data.QMS.total > 0 && data.QMS.total <= 7) {
+                    document.getElementById('qms_timeline').innerHTML = Math.round(4).toFixed(2);
+                } else if (data.QMS.total > 7 && data.QMS.total <= 31) {
+                    document.getElementById('qms_timeline').innerHTML = Math.round(3).toFixed(2);
+                } else if (data.QMS.total <= 90) {
+                    document.getElementById('qms_timeline').innerHTML = Math.round(2).toFixed(2);
+                } else {
+                    document.getElementById('qms_timeline').innerHTML = Math.round(1).toFixed(2);
+                }
+            }
+            let task = <?= isset($QMSPercentage) ? (($QMSPercentage / 100) * 5) : 0 ?>;
+            let bur = parseFloat(document.getElementById('qms_bur').textContent);
+            let time = parseFloat(document.getElementById('qms_timeline').textContent);
+            let status = (task + bur + time) / 3;
+            if (status > 0 && status <= 3) {
+                document.getElementById('qms_status').innerHTML =
+                    "<span style='background: #f8d7da; color: #721c24; padding: 4px 12px; border-radius: 20px;'>At Risk</span>";
+            } else if (status > 3 && status <= 4.5) {
+                document.getElementById('qms_status').innerHTML =
+                    "<span style='background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 20px;'>Needs Attention</span>";
+            } else if (status > 4.49) {
+                document.getElementById('qms_status').innerHTML =
+                    "<span style='background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 20px;''>On Track</span>";
+            } else {
+                document.getElementById('qms_status').innerHTML = '-';
             }
         })
         .catch(error => {

@@ -269,10 +269,6 @@
                         for ($i = 0; $i < $fullStars; $i++) {
                             echo '<i class="star fas fa-star filled"></i>';
                         }
-                        // Half star
-                        // if ($halfStar) {
-                        //     echo '<i class="star fas fa-star-half-alt filled"></i>';
-                        // }
                         // // Empty stars
                         for ($i = 0; $i < $emptyStars; $i++) {
                             echo '<i class="star far fa-star"></i>';
