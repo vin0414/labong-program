@@ -493,21 +493,58 @@ class HomeController extends Controller
             'activity-description' => 'required|string',
         ]);
 
-        // Assign validated data to the model
-        $projectModel->name = $validatedData['activity-title'];
-        $projectModel->category = $validatedData['project-category'];
-        $projectModel->budget_source = $validatedData['budget-source-create'];
-        $projectModel->first_name = $validatedData['proponent-firstname'];
-        $projectModel->last_name = $validatedData['proponent-surname'];
-        $projectModel->budget_amount = $validatedData['budget-allocated-create'];
-        $projectModel->amount_spent = 0; // Default amount spent
-        $projectModel->implementation_date = $validatedData['target-date-create'];
-        $projectModel->completed_date = '';
-        $projectModel->description = $validatedData['activity-description'];
-        $projectModel->status = 0; // Default status
-        $projectModel->created_by = $request->session()->get('user')->id;
-        $projectModel->save();
-
+        DB::beginTransaction();
+        try
+        {
+            // Assign validated data to the model
+            $projectModel->name = $validatedData['activity-title'];
+            $projectModel->category = $validatedData['project-category'];
+            $projectModel->budget_source = $validatedData['budget-source-create'];
+            $projectModel->first_name = $validatedData['proponent-firstname'];
+            $projectModel->last_name = $validatedData['proponent-surname'];
+            $projectModel->budget_amount = $validatedData['budget-allocated-create'];
+            $projectModel->amount_spent = 0; // Default amount spent
+            $projectModel->implementation_date = $validatedData['target-date-create'];
+            $projectModel->completed_date = '';
+            $projectModel->description = $validatedData['activity-description'];
+            $projectModel->status = 0; // Default status
+            $projectModel->created_by = $request->session()->get('user')->id;
+            $projectModel->save();
+            //save deliverables automatically
+            $model = new \App\Models\activityModel();
+            $data = [
+                    ["task" => "Submission of WFP (Encoding in PMIS)","stats" => 0,],
+                    ["task" => "Submission of Activity/Training Proposal","stats" => 0,],
+                    ["task" => "Approved proposal or request","stats" => 0,],
+                    ["task" => "Activity Request (AR)","stats" => 0,],
+                    ["task" => "Purchase Request (PR)","stats" => 0,],
+                    ["task" => "Procurement Process","stats" => 0,],
+                    ["task" => "Purchase Order (PO)","stats" => 0,],
+                    ["task" => "Delivery, Inspection and Acceptance","stats" => 0,],
+                    ["task" => "Release of Memorandum or Notice","stats" => 0,],
+                    ["task" => "Pre-Conference","stats" => 0,],
+                    ["task" => "Implementation","stats" => 0,],
+                    ["task" => "Post-Conference","stats" => 0,],
+                    ["task" => "Activity Completion Report","stats" => 0,],
+                    ["task" => "Liquidation Report","stats" => 0,],
+                    ["task" => "Payment/Disbursement","stats" => 0,],
+                ];
+            $project = $projectModel->where('name',$validatedData['activity-title'])
+                                    ->first();
+            foreach ($data as $item) {
+                $model::create([
+                    'project_id' => $project['project_id'],
+                    'category'=>$validatedData['project-category'],
+                    'description' => $item['task'],
+                    'stats' => $item['stats'],
+                ]);
+            }
+            DB::commit();
+        }
+        catch (\Exception $e) {
+            DB::rollBack();
+            return redirect('/')->with('error',$e);
+        }
         return redirect('/')->with('success','Great! Successfully submitted');
     }
 

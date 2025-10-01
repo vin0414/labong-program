@@ -84,7 +84,7 @@
                         <ul class="activity-list">
                             <?php foreach($listICare as $activity): ?>
                             <li data-project="icare">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -107,7 +107,7 @@
                         <ul class="activity-list">
                             <?php foreach($listSinulid as $activity): ?>
                             <li data-project="sinulid">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -130,7 +130,7 @@
                         <ul class="activity-list">
                             <?php foreach($listSagip as $activity): ?>
                             <li data-project="sagip">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -153,7 +153,7 @@
                         <ul class="activity-list">
                             <?php foreach($listLingap as $activity): ?>
                             <li data-project="lingap">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -177,7 +177,7 @@
                         <ul class="activity-list">
                             <?php foreach($listIsshed as $activity): ?>
                             <li data-project="isshed">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -200,7 +200,7 @@
                         <ul class="activity-list">
                             <?php foreach($listUX as $activity): ?>
                             <li data-project="ux">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -223,7 +223,7 @@
                         <ul class="activity-list">
                             <?php foreach($listGentri as $activity): ?>
                             <li data-project="gentri">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -246,7 +246,7 @@
                         <ul class="activity-list">
                             <?php foreach($listOkDepEd as $activity): ?>
                             <li data-project="OkDepEd">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -270,7 +270,7 @@
                         <ul class="activity-list">
                             <?php foreach($listSecurePuso as $activity): ?>
                             <li data-project="secure-puso">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -294,7 +294,7 @@
                         <ul class="activity-list">
                             <?php foreach($listDRRM as $activity): ?>
                             <li data-project="drrm-safe">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -318,7 +318,7 @@
                         <ul class="activity-list">
                             <?php foreach($listHumane as $activity): ?>
                             <li data-project="humane">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>
@@ -341,7 +341,7 @@
                         <ul class="activity-list">
                             <?php foreach($listQMS as $activity): ?>
                             <li data-project="qms-eoms">
-                                <a href="{{ route('activity-details',['id'=>$activity->project_id]) }}"
+                                <a href="{{ route('details',['id'=>$activity->project_id]) }}"
                                     class="no-line"><?=$activity->name?></a><span
                                     class="activity-progress"><?=$activity->percentage?>%</span>
                             </li>

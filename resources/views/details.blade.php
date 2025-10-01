@@ -109,17 +109,10 @@
                 @if(!empty(session()->get('user')))
                 <div style="display:flex;gap:5px;margin-bottom:10px;">
                     @if($project['status']==0)
-                    <button type="button" class="btn btn-primary complete" value="{{ $project->project_id }}">
-                        <i class="fas fa-check"></i>&nbsp;Tag as Completed
-                    </button>
                     <a href="{{ route('edit',['id'=>$project['project_id']]) }}" style="text-decoration:none;"
                         class="btn btn-warning">
                         <i class="fas fa-edit"></i>&nbsp;Edit
                     </a>
-                    @else
-                    <button type="button" class="btn btn-primary" disabled>
-                        <i class="fas fa-check"></i>&nbsp;Completed
-                    </button>
                     @endif
                 </div>
                 @endif
@@ -168,13 +161,6 @@
                             Activity Deliverables
                         </h2>
                     </div>
-                    @if(!empty(session()->get('user')))
-                    @if($project['status']==0)
-                    <button type="button" class="btn btn-primary" id="btnModal">
-                        <i class="fas fa-plus"></i>&nbsp;Add
-                    </button>
-                    @endif
-                    @endif
 
                     <div class="step-list">
                         @if($activities->isEmpty())
