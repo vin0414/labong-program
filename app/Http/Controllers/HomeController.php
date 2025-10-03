@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
-
+use \App\Models\projectModel;
 
 class HomeController extends Controller
 {
@@ -383,31 +383,6 @@ class HomeController extends Controller
         }
     }
 
-    public function closeProject(Request $request)
-    {
-        $validator = Validator::make($request->all(),[
-            'value'=>'required|numeric'
-        ]);
-
-        if($validator->fails())
-        {
-            return response()->json(['errors'=>$validator->Errors()]);
-        }
-        else
-        {
-            $projectModel = new \App\Models\projectModel();
-            $project = $projectModel::find($request->value);
-            if($project)
-            {
-                $project->completed_date = date('Y-m-d');
-                $project->status=1;
-                $project->save();
-                return response()->json(['success'=>'Successfully tag as completed']);
-            }
-            return response()->json(['errors'=>'Something went wrong']);
-        }
-    }
-
     //activity details
     public function activityDetails($id){
         $projectModel = new \App\Models\projectModel();
@@ -575,6 +550,15 @@ class HomeController extends Controller
         }
     }
 
+    public function closeProject($value)
+    {
+        projectModel::where('project_id', $value)->update([
+            'status' => 1,
+            'completed_date' => now()->toDateString(),
+        ]);
+
+    }
+
     public function updateStatus(Request $request)
     {
         if(empty(session()->get('user')))
@@ -586,8 +570,14 @@ class HomeController extends Controller
         if ($activity) {
             $activity->status = $request->status;
             $activity->save();
-            return response()->json(['success' => true]);
         }
-        return response()->json(['success' => false], 404);
+        //check if all status is equal to 1
+        $hasIncomplete = $activityModel->where('project_id',$activity->project_id)
+                               ->where('status', '!=',1)->exists();
+        if(!$hasIncomplete)
+        {
+            $this->closeProject($activity->project_id);
+        }
+        return response()->json(['success' => true]);
     }
 }
