@@ -108,12 +108,10 @@
                 </div>
                 @if(!empty(session()->get('user')))
                 <div style="display:flex;gap:5px;margin-bottom:10px;">
-                    @if($project['status']==0)
                     <a href="{{ route('edit',['id'=>$project['project_id']]) }}" style="text-decoration:none;"
                         class="btn btn-warning">
                         <i class="fas fa-edit"></i>&nbsp;Edit
                     </a>
-                    @endif
                 </div>
                 @endif
                 <div class="activity-info-grid">

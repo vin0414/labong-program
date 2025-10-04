@@ -38,13 +38,14 @@
                     <i class="fas fa-sign-out"></i> Logout
                 </a>
                 @endif
-                <button class="btn btn-success" id="export-btn">
+                <button class="btn btn-success" id="btnExport">
                     <i class="fas fa-file-export"></i> Export
                 </button>
             </div>
         </header>
         <div class="tabs">
-            <div class="tab active" data-target="projects-view">Projects Dashboard</div>
+            <div class="tab active" data-target="program-view">Program Dashboard</div>
+            <div class="tab" data-target="projects-view">Projects Dashboard</div>
             <div class="tab" data-target="consolidated-view">Consolidated Report</div>
             @if(!empty(session()->get('user')))
             <div class="tab" data-target="create-view">Create Project</div>
@@ -60,9 +61,146 @@
             {{ session('error') }}
         </div>
         @endif
-        <!-- Projects Dashboard View -->
+        <div id="program-view" class="tab-content active">
+            <div class="section-title">
+                <i class="fas fa-tachometer-alt"></i>
+                <h2>LABONG Program Dashboard</h2>
+            </div>
+            <div class="pillars-container">
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <h3><i class="fas fa-book-open"></i> A. Linang</h3>
+                        <div class="pillar-description">
+                            Learning-focus delivery (instructions, interventions, innovation and enrichment),
+                            assessment, and resources and environment
+                        </div>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="projects-section">
+                            <h4><i class="fas fa-project-diagram"></i> Projects</h4>
+                            <ul class="activity-list">
+                                <li>I-CARE<span
+                                        class="activity-progress"><?=number_format($ICarePercentage,2) ?>%</span></li>
+                                <li>SINULID<span
+                                        class="activity-progress"><?=number_format($SinulidPercentage,2) ?>%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <h3><i class="fas fa-hands-helping"></i> B. Agapay</h3>
+                        <div class="pillar-description">
+                            Access, Equity, Inclusion, Well-being and Resilience
+                        </div>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="projects-section">
+                            <h4><i class="fas fa-project-diagram"></i> Projects</h4>
+                            <ul class="activity-list">
+                                <li>SAGIP<span class="activity-progress"><?=number_format($SagipPercentage,2) ?>%</span>
+                                </li>
+                                <li>LINGAP<span
+                                        class="activity-progress"><?=number_format($LingapPercentage,2) ?>%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pillar C: Buklod -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <h3><i class="fas fa-handshake"></i> C. Buklod</h3>
+                        <div class="pillar-description">
+                            Stakeholders' Engagement and Community Partnerships
+                        </div>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="projects-section">
+                            <h4><i class="fas fa-project-diagram"></i> Projects</h4>
+                            <ul class="activity-list">
+                                <li>ISSHED<span
+                                        class="activity-progress"><?=number_format($IsshedPercentage,2) ?>%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-        <div id="projects-view" class="tab-content active">
+                <!-- Pillar D: Optima -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <h3><i class="fas fa-cogs"></i> D. Optima</h3>
+                        <div class="pillar-description">
+                            Streamlining, Automation and Digitalization of Services, Research, Continuous Improvement
+                            and Innovation
+                        </div>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="projects-section">
+                            <h4><i class="fas fa-project-diagram"></i> Projects</h4>
+                            <ul class="activity-list">
+                                <li>UX
+                                    <span class="activity-progress"><?=number_format($UxPercentage,2) ?>%</span>
+                                </li>
+                                <li>Gentri SALIKSIK
+                                    <span class="activity-progress"><?=number_format($GentriPercentage,2) ?>%</span>
+                                </li>
+                                <li>QMS/EOMS
+                                    <span class="activity-progress"><?=number_format($QMSPercentage,2) ?>%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar E: Numbalik -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <h3><i class="fas fa-heartbeat"></i> E. Numbalik</h3>
+                        <div class="pillar-description">
+                            Learning Recovery, Well-being and Safe and Inclusive Environment
+                        </div>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="projects-section">
+                            <h4><i class="fas fa-project-diagram"></i> Projects</h4>
+                            <ul class="activity-list">
+                                <li>OK sa DepEd Gentri
+                                    <span class="activity-progress"><?=number_format($OkDepEdPercentage,2) ?>%</span>
+                                </li>
+                                <li>SECURE-PUSO
+                                    <span class="activity-progress"><?=number_format($SecurePercentage,2) ?>%</span>
+                                </li>
+                                <li>DRRM-SAFE
+                                    <span class="activity-progress"><?=number_format($DRRMPercentage,2) ?>%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar F: Galing -->
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <h3><i class="fas fa-user-graduate"></i> F. Galing</h3>
+                        <div class="pillar-description">
+                            Human Resource Development, Management and Excellence
+                        </div>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="projects-section">
+                            <h4><i class="fas fa-project-diagram"></i> Projects</h4>
+                            <ul class="activity-list">
+                                <li>HUMANE
+                                    <span class="activity-progress"><?=number_format($HumanePercentage,2) ?>%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Projects Dashboard View -->
+        <div id="projects-view" class="tab-content">
             <div class="section-title">
                 <i class="fas fa-project-diagram"></i>
                 <h2>LABONG Program Projects</h2>
@@ -401,7 +539,7 @@
                     <i class="fas fa-tasks"></i>
                     <h2>Project Status Overview</h2>
                 </div>
-                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;" id="table1">
                     <thead>
                         <tr style="background-color: #f1f8ff;">
                             <th style="padding: 12px; text-align: left;">Project</th>
@@ -1561,6 +1699,18 @@
         .catch(error => {
             console.error('Fetch error:', error);
         });
+
+    document.getElementById('btnExport').addEventListener('click', function() {
+        const table = document.getElementById('table1');
+        let html = table.outerHTML;
+        let blob = new Blob([html], {
+            type: 'application/vnd.ms-excel'
+        });
+        let link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'project_overview_status.xls';
+        link.click();
+    });
     </script>
 </body>
 

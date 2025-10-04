@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
-use \App\Models\projectModel;
 
 class HomeController extends Controller
 {
@@ -375,11 +374,11 @@ class HomeController extends Controller
                 'activity_description' => $validatedData['activity-description'],
             ]);
 
-            return redirect('/activity-details/'.$validatedData['project_id'])->with('success','Great! Successfully applied changes');
+            return redirect('/details/'.$validatedData['project_id'])->with('success','Great! Successfully applied changes');
         }
         else
         {
-            return redirect('/activity-details/'.$validatedData['project_id'])->with('error','Invalid! Project not found');
+            return redirect('/details/'.$validatedData['project_id'])->with('error','Invalid! Project not found');
         }
     }
 
@@ -552,7 +551,8 @@ class HomeController extends Controller
 
     public function closeProject($value)
     {
-        projectModel::where('project_id', $value)->update([
+        $projectModel = new \App\Models\projectModel();
+        $projectModel::where('project_id', $value)->update([
             'status' => 1,
             'completed_date' => now()->toDateString(),
         ]);
