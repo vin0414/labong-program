@@ -76,6 +76,19 @@
                         </div>
                     </div>
                     <div class="pillar-body">
+                        <div class="kpi-section">
+                            <h4><i class="fas fa-chart-line"></i> KPIs</h4>
+                            <ul class="kpi-list">
+                                <li>Proficiency Levels (% of Proficient/Nearly Proficient Learners)
+                                    <ul>
+                                        <li>Learning Areas (LOA)</li>
+                                        <li>Literacy (Reading)</li>
+                                        <li>Numeracy</li>
+                                    </ul>
+                                </li>
+                                <li>Socio-Emotional Learning (% of Learners covered)</li>
+                            </ul>
+                        </div>
                         <div class="projects-section">
                             <h4><i class="fas fa-project-diagram"></i> Projects</h4>
                             <ul class="activity-list">
@@ -95,6 +108,21 @@
                         </div>
                     </div>
                     <div class="pillar-body">
+                        <div class="kpi-section">
+                            <h4><i class="fas fa-chart-line"></i> KPIs</h4>
+                            <ul class="kpi-list">
+                                <li>Out-of-School Children, Youth, and Adults (Ratio of Mapped and Enrolled)</li>
+                                <li>Participation (Enrollment)</li>
+                                <li>Dropout (Rate/Percentage)</li>
+                                <li>Inclusion (ADM/FLO Enrollment)
+                                    <ul>
+                                        <li>SNED</li>
+                                        <li>ALIVE</li>
+                                        <li>ALS</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="projects-section">
                             <h4><i class="fas fa-project-diagram"></i> Projects</h4>
                             <ul class="activity-list">
@@ -115,6 +143,17 @@
                         </div>
                     </div>
                     <div class="pillar-body">
+                        <div class="kpi-section">
+                            <h4><i class="fas fa-chart-line"></i> KPIs</h4>
+                            <ul class="kpi-list">
+                                <li>Partnerships (Number and Revenue)
+                                    <ul>
+                                        <li>New (Current Year)</li>
+                                        <li>Sustained</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="projects-section">
                             <h4><i class="fas fa-project-diagram"></i> Projects</h4>
                             <ul class="activity-list">
@@ -135,6 +174,13 @@
                         </div>
                     </div>
                     <div class="pillar-body">
+                        <div class="kpi-section">
+                            <h4><i class="fas fa-chart-line"></i> KPIs</h4>
+                            <ul class="kpi-list">
+                                <li>Systems Development</li>
+                                <li>Research, Continuous Improvement and Innovation</li>
+                            </ul>
+                        </div>
                         <div class="projects-section">
                             <h4><i class="fas fa-project-diagram"></i> Projects</h4>
                             <ul class="activity-list">
@@ -161,6 +207,15 @@
                         </div>
                     </div>
                     <div class="pillar-body">
+                        <div class="kpi-section">
+                            <h4><i class="fas fa-chart-line"></i> KPIs</h4>
+                            <ul class="kpi-list">
+                                <li>Health (% of Learners)</li>
+                                <li>Rights and Protection (% of Learners)</li>
+                                <li>Safety (% of Safe Schools)</li>
+                                <li>Infrastructure Development (Classroom to Student Ratio/Class Size)</li>
+                            </ul>
+                        </div>
                         <div class="projects-section">
                             <h4><i class="fas fa-project-diagram"></i> Projects</h4>
                             <ul class="activity-list">
@@ -187,6 +242,12 @@
                         </div>
                     </div>
                     <div class="pillar-body">
+                        <div class="kpi-section">
+                            <h4><i class="fas fa-chart-line"></i> KPIs</h4>
+                            <ul class="kpi-list">
+                                <li>PRIME-HRM Level (Gold, Silver)</li>
+                            </ul>
+                        </div>
                         <div class="projects-section">
                             <h4><i class="fas fa-project-diagram"></i> Projects</h4>
                             <ul class="activity-list">
