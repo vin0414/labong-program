@@ -20,6 +20,7 @@ class projectModel extends Model
         'budget_amount',
         'amount_spent',
         'implementation_date',
+        'date_conducted',
         'completed_date',
         'description',
         'status',

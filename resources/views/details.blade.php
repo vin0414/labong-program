@@ -112,8 +112,13 @@
                         class="btn btn-warning">
                         <i class="fas fa-edit"></i>&nbsp;Edit
                     </a>
+                    <button type="button" class="btn btn-danger delete" value="{{ $project['project_id'] }}">
+                        <i class="fas fa-trash"></i>&nbsp;Delete
+                    </button>
                 </div>
                 @endif
+                <h2 style="margin-bottom: 10px;">Description: <span
+                        id="activity-name"><?=$project['description']?></span></h2>
                 <div class="activity-info-grid">
                     <div class="info-card">
                         <h3>Amount Allocated</h3>
@@ -130,7 +135,9 @@
                     </div>
                     <div class="info-card">
                         <h3>Date Conducted</h3>
-                        <p><span id="date-conducted"><?=date('F d, Y',strtotime($project['created_at']))?></span></p>
+                        <p><span
+                                id="date-conducted"><?= !empty($project['date_conducted']) ? date('F d, Y', strtotime($project['date_conducted'])) : '0000-00-00' ?></span>
+                        </p>
                     </div>
                     <div class="info-card">
                         <h3>Budget Source</h3>
@@ -164,22 +171,39 @@
                         @if($activities->isEmpty())
                         <div class="step-item">No Deliverables</div>
                         @else
-                        @php $canActivate = true; @endphp
+                        @php
+                        $firstPendingIndex = null;
+                        foreach ($activities as $i => $row) {
+                        if ($row['status'] == 0) {
+                        $firstPendingIndex = $i;
+                        break;
+                        }
+                        }
+                        @endphp
+
                         @foreach($activities as $i => $row)
+                        @php
+                        $isCompleted = $row['status'] == 1;
+                        $isPending = $row['status'] == 0;
+                        $isFirstPending = $i === $firstPendingIndex;
+                        $isBeforeFirstPending = $i === $firstPendingIndex - 1;
+                        @endphp
+
                         <div class="step-item">
                             <input type="checkbox" class="step-checkbox" data-id="{{ $row['activity_id'] }}"
-                                value="{{ $row['activity_id'] }}" @if($row['status']==1) checked disabled @php
-                                $canActivate=true; @endphp @elseif($canActivate) {{-- Allow activation --}} @php
-                                $canActivate=false; @endphp @else disabled @endif>
+                                value="{{ $row['activity_id'] }}" @if($isCompleted && !$isBeforeFirstPending) checked
+                                disabled @elseif($isBeforeFirstPending && $isCompleted) checked @elseif($isFirstPending)
+                                @else disabled @endif>
+
                             <div class="step-label">{{ $i + 1 }}. {{ $row['description'] }}</div>
-                            @if($row['status'] == 1)
+
+                            @if($isCompleted)
                             <div class="step-status status-completed">Completed</div>
-                            @elseif($row['status'] == 0)
+                            @elseif($isPending)
                             <div class="step-status status-pending">Pending</div>
                             @endif
                         </div>
                         @endforeach
-
                         @endif
                     </div>
                 </div>
@@ -372,10 +396,10 @@
             alerts[i].style.display = 'none';
         }
     }, 3000);
-    $(document).on('click', '.complete', function() {
+    $(document).on('click', '.delete', function() {
         Swal.fire({
             title: 'Are you sure?',
-            text: "Do you want to tag this as completed?",
+            text: "Do you want to delete this activity?",
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Continue',
@@ -386,7 +410,7 @@
                 let val = $(this).val();
                 var csrfToken = $('meta[name="csrf-token"]').attr('content');
                 $.ajax({
-                    url: "{{ route('close-project') }}",
+                    url: "{{ route('delete-project') }}",
                     method: "POST",
                     data: {
                         value: val
@@ -398,13 +422,13 @@
                         if (response.success) {
                             Swal.fire({
                                 title: 'Great!',
-                                text: "Successfully tag as completed",
+                                text: "Successfully removed",
                                 icon: 'success',
                                 confirmButtonText: 'Continue'
                             }).then((result) => {
                                 // Action based on user's choice
                                 if (result.isConfirmed) {
-                                    location.reload();
+                                    location.href = "/";
                                 }
                             });
                         } else {

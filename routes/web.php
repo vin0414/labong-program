@@ -11,7 +11,7 @@ Route::post('/save-project',[HomeController::class,'saveProject'])->name('save-p
 Route::post('/edit-project',[HomeController::class,'editProject'])->name('edit-project');
 Route::post('/save',[HomeController::class,'save'])->name('save');
 Route::post('/update-status', [HomeController::class, 'updateStatus'])->name('update-status');
-Route::post('/close-project',[HomeController::class,'closeProject'])->name('close-project');
+Route::post('/delete-project',[HomeController::class,'deleteProject'])->name('delete-project');
 //prevent login page if already logged in
 Route::middleware('guest')->group(function () {
     Route::get('/login',[HomeController::class,'login'])->name('login');

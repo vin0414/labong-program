@@ -180,6 +180,10 @@
 
     }
 
+    .btn-danger {
+        background: var(--danger);
+        color: #fff;
+    }
 
 
     .btn-primary {

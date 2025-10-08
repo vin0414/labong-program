@@ -355,6 +355,7 @@ class HomeController extends Controller
             'budget-allocated-create' => 'required|numeric|min:0',
             'amount_spent' => 'required|numeric|min:0',
             'target-date-create' => 'required|date',
+            'date-conducted' => 'required|date',
             'activity-description' => 'required|string',
         ]);
         // Find the existing record
@@ -370,7 +371,8 @@ class HomeController extends Controller
                 'proponent_surname' => $validatedData['proponent-surname'],
                 'budget_allocated' => $validatedData['budget-allocated-create'],
                 'amount_spent' => $validatedData['amount_spent'],
-                'target_date' => $validatedData['target-date-create'],
+                'implementation_date' => $validatedData['target-date-create'],
+                'date_conducted' => $validatedData['date-conducted'],
                 'activity_description' => $validatedData['activity-description'],
             ]);
 
@@ -479,6 +481,7 @@ class HomeController extends Controller
             $projectModel->budget_amount = $validatedData['budget-allocated-create'];
             $projectModel->amount_spent = 0; // Default amount spent
             $projectModel->implementation_date = $validatedData['target-date-create'];
+            $projectModel->date_conducted = '';
             $projectModel->completed_date = '';
             $projectModel->description = $validatedData['activity-description'];
             $projectModel->status = 0; // Default status
@@ -579,5 +582,25 @@ class HomeController extends Controller
             $this->closeProject($activity->project_id);
         }
         return response()->json(['success' => true]);
+    }
+
+    public function deleteProject(Request $request)
+    {
+        $projectModel = new \App\Models\projectModel();
+        $value = $request->input('value');
+        if(empty($value)|| !is_numeric($value))
+        {
+            return response()->json(['error'=>'Invalid Request']);
+        }
+        //soft delete
+        $updated = $projectModel->where('project_id',$value)
+                ->update([
+                    'deleted_at'=>date('Y-m-d H:i:s')
+                ]);
+        if ($updated) {
+            return response()->json(['success' => 'Project soft-deleted']);
+        } else {
+            return response()->json(['error' => 'Failed to delete project']);
+        }
     }
 }

@@ -204,7 +204,17 @@
                             </div>
                             <div class="form-col">
                                 <div class="form-group">
-                                    <label for="target-date-create">Target Date of Implementation</label>
+                                    <label for="date-conducted">Date Conducted</label>
+                                    <input type="date" name="date-conducted" value="{{ $project->date_conducted }}"
+                                        required />
+                                    @if($errors->has('date-conducted'))
+                                    <span class="text-danger">{{ $errors->first('date-conducted') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="target-date-create">Target Date</label>
                                     <input type="date" name="target-date-create"
                                         value="{{ $project->implementation_date }}" required />
                                     @if($errors->has('target-date-create'))
