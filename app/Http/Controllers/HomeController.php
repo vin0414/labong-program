@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use \App\Models\roleModel;
 
 class HomeController extends Controller
 {
@@ -319,6 +320,12 @@ class HomeController extends Controller
         if ($user && Hash::check($password, $user->password)) {
             // Authentication passed
             $request->session()->put('user', $user);
+            //get the role
+            $roleModel = new roleModel();
+            $role = $roleModel->where('user_id',$user->id)->first();
+            if ($role) {
+                $request->session()->put('role', $role->role_name);
+            }
             return redirect('/')->with('success', 'Login successful');
         } else {
             // Authentication failed
@@ -327,7 +334,12 @@ class HomeController extends Controller
     }
 
     public function logout(Request $request){
-        $request->session()->forget('user');
+        // Clear all session data
+        $request->session()->flush();
+
+        // Optionally regenerate session ID for security
+        $request->session()->regenerate();
+
         return redirect('/login')->with('success', 'Logout successful');
     }
 
@@ -513,7 +525,7 @@ class HomeController extends Controller
                     'project_id' => $project['project_id'],
                     'category'=>$validatedData['project-category'],
                     'description' => $item['task'],
-                    'stats' => $item['stats'],
+                    'status' => $item['stats'],
                 ]);
             }
             DB::commit();
@@ -567,6 +579,10 @@ class HomeController extends Controller
         if(empty(session()->get('user')))
         {
             return redirect('/login')->with('error', 'You must be logged in');
+        }
+        if(session()->get('role')!=='Super-admin')
+        {
+            return response()->json(['error' => "Invalid Request"]);
         }
         $activityModel = new \App\Models\activityModel();
         $activity = $activityModel::find($request->activity_id);

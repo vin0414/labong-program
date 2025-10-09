@@ -106,7 +106,7 @@
                     <i class="fas fa-tasks"></i>
                     <h2>Activity: <span id="activity-name"><?=$project['name']?></span></h2>
                 </div>
-                @if(!empty(session()->get('user')))
+                @if(!empty(session()->get('user')) && session()->get('role')==="Super-admin")
                 <div style="display:flex;gap:5px;margin-bottom:10px;">
                     <a href="{{ route('edit',['id'=>$project['project_id']]) }}" style="text-decoration:none;"
                         class="btn btn-warning">
@@ -508,8 +508,12 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Status updated:', data);
-                    location.reload();
+                    //console.log('Status updated:', data);
+                    if (data.success) {
+                        location.reload();
+                    } else {
+                        alert(data.error);
+                    }
                 })
                 .catch(error => {
                     console.error('Error updating status:', error);
