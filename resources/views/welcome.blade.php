@@ -280,7 +280,7 @@
                             <span><?=$totalICare ?> Activities</span>
                             <span>Overall Progress: <?=number_format($ICarePercentage,2) ?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listICare as $activity): ?>
                             <li data-project="icare">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -303,7 +303,7 @@
                             <span><?=$totalSinulid?> Activities</span>
                             <span>Overall Progress: <?=number_format($SinulidPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listSinulid as $activity): ?>
                             <li data-project="sinulid">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -326,7 +326,7 @@
                             <span><?=$totalSagip?> Activities</span>
                             <span>Overall Progress: <?=number_format($SagipPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listSagip as $activity): ?>
                             <li data-project="sagip">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -349,7 +349,7 @@
                             <span><?=$totalLingap?> Activities</span>
                             <span>Overall Progress: <?=number_format($LingapPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listLingap as $activity): ?>
                             <li data-project="lingap">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -373,7 +373,7 @@
                             <span><?=$totalIsshed?> Activities</span>
                             <span>Overall Progress: <?=number_format($IsshedPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listIsshed as $activity): ?>
                             <li data-project="isshed">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -396,7 +396,7 @@
                             <span><?=$totalUX?> Activities</span>
                             <span>Overall Progress: <?=number_format($UxPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listUX as $activity): ?>
                             <li data-project="ux">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -419,7 +419,7 @@
                             <span><?=$totalGentri?> Activities</span>
                             <span>Overall Progress: <?=number_format($GentriPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listGentri as $activity): ?>
                             <li data-project="gentri">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -442,7 +442,7 @@
                             <span><?=$totalOkDepEd?> Activities</span>
                             <span>Overall Progress: <?=number_format($OkDepEdPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listOkDepEd as $activity): ?>
                             <li data-project="OkDepEd">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -466,7 +466,7 @@
                             <span><?=$totalSecurePuso?> Activities</span>
                             <span>Overall Progress: <?=number_format($SecurePercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listSecurePuso as $activity): ?>
                             <li data-project="secure-puso">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -490,7 +490,7 @@
                             <span><?=$totalDRRM?> Activities</span>
                             <span>Overall Progress: <?=number_format($DRRMPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listDRRM as $activity): ?>
                             <li data-project="drrm-safe">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -514,7 +514,7 @@
                             <span><?=$totalHumane?> Activities</span>
                             <span>Overall Progress: <?=number_format($HumanePercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listHumane as $activity): ?>
                             <li data-project="humane">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"
@@ -537,7 +537,7 @@
                             <span><?=$totalQMS?> Activities</span>
                             <span>Overall Progress: <?=number_format($QMSPercentage,2)?>%</span>
                         </div>
-                        <ul class="activity-list">
+                        <ul class="activity-list activityShort element">
                             <?php foreach($listQMS as $activity): ?>
                             <li data-project="qms-eoms">
                                 <a href="{{ route('details',['id'=>$activity->project_id]) }}"

@@ -418,7 +418,7 @@ class HomeController extends Controller
         //get all the activities
         $activities = clone $activityModel->where('project_id',$id)->get();
         //bur
-        $bur = ($project['amount_spent']/$project['budget_amount'])*100 ?? 0;
+        $bur = $project['budget_amount']>0 ? ($project['amount_spent']/$project['budget_amount'])*100 : 0;
         $burStar = ($bur/100)*5 ?? 0;
         //timeliness
         $implementationDate = Carbon::parse($project['implementation_date']);

@@ -574,7 +574,24 @@
 
     }
 
+    .activityShort {
+        height: 300px;
+        overflow-y: auto;
+    }
 
+    .element {
+        overflow: scroll;
+        /* or overflow: auto; */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
+    }
+
+    .element::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Edge */
+    }
 
     .activity-list li {
 
